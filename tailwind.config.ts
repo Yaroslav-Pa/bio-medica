@@ -8,21 +8,20 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
+      backgroundImage: {},
       colors: {
         mainColor: 'rgb(230, 230, 230)',
         secondColor: 'rgb(180, 180, 180)',
         thierdColor: 'rgb(60, 64, 67)',
         buttonColor: 'rgb(180, 180, 180)',
         hoverColor: 'rgb(255, 255, 255)',
+        hoverBackUpColor: 'rgb(0, 0, 0)',
       },
       fontSize: {
         small: '12px',
         base: '14px',
+        large: '18px',
+        xl: '24px',
       },
       maxWidth: {
         containerWidth: '1400px',

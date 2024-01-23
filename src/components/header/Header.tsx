@@ -26,11 +26,11 @@ function Header() {
         <section className="w-full  py-[15px] bg-mainColor">
           <div className="max-w-containerWidth max-h-[50px] mx-[auto] flex flex-row justify-around items-center">
             <Link href="./" className="max-h-fit">
-              <img
-                src="./logo.png"
-                alt="logo"
-                className="max-h-[35px] sm:max-h-[50px]"
-              />
+                <img
+                  src="./logo.png"
+                  alt="logo"
+                  className="max-h-[35px] sm:max-h-[50px]"
+                />
             </Link>
             <div className="font-bold text-small md:text-base">
               <p>{phone}</p>
