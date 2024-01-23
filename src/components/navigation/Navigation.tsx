@@ -13,7 +13,7 @@ function Navigation(
           className={
             'm-3 hover:text-hoverColor hover:cursor-pointer transition-colors duration-100 text-center' +
             (isWithBg &&
-              ' p-2 hover:bg-secondColor rounded-md transition-colors duration-200')
+              ' p-2 hover:bg-buttonColor rounded-md transition-colors duration-200')
           }
         >
           <Link href={url}>{pageName}</Link>

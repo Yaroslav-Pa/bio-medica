@@ -16,6 +16,8 @@ const config: Config = {
       colors: {
         mainColor: 'rgb(230, 230, 230)',
         secondColor: 'rgb(180, 180, 180)',
+        thierdColor: 'rgb(60, 64, 67)',
+        buttonColor: 'rgb(180, 180, 180)',
         hoverColor: 'rgb(255, 255, 255)',
       },
       fontSize: {
