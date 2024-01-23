@@ -15,11 +15,15 @@ const config: Config = {
       },
       colors: {
         'mainColor': 'rgb(230, 230, 230)',
-        'secondColor': 'rgb(255, 255, 255)',
-        'hoverColor': 'rgb(27, 122, 35)',
+        'secondColor': 'rgb(180, 180, 180)',
+        'hoverColor': 'rgb(255, 255, 255)',
       },
       fontSize: {
-        base:'16px'
+        small:'12px',
+        base:'14px'
+      },
+      maxWidth: {
+        'containerWidth': '1400px',
       }
     },
   },

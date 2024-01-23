@@ -1,16 +1,23 @@
 import Link from 'next/link';
 import { page } from '../header/Header';
-function Navigation({pages}:{pages: page[]}) {
+function Navigation(
+  { pages }: { pages: page[] },
+  isRow: boolean = true,
+  isWithBg: boolean = true
+) {
   return (
-    <nav className="flex flex-row gap-5">
+    <nav className={'flex gap-5' + (isRow ? ' flex-row' : ' flex-col')}>
       {pages.map(({ url, pageName }) => (
-        <Link
-          href={url}
+        <div
           key={url}
-          className="hover:text-hoverColor transition-colors duration-200"
+          className={
+            'm-3 hover:text-hoverColor hover:cursor-pointer transition-colors duration-100 text-center' +
+            (isWithBg &&
+              ' p-2 hover:bg-secondColor rounded-md transition-colors duration-200')
+          }
         >
-          {pageName}
-        </Link>
+          <Link href={url}>{pageName}</Link>
+        </div>
       ))}
     </nav>
   );
