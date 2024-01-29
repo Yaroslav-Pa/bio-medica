@@ -10,18 +10,19 @@ const config: Config = {
     extend: {
       backgroundImage: {},
       colors: {
-        mainColor: 'rgb(230, 230, 230)',
+        firstColor: 'rgb(230, 230, 230)',
         secondColor: 'rgb(180, 180, 180)',
-        thierdColor: 'rgb(60, 64, 67)',
-        buttonColor: 'rgb(180, 180, 180)',
-        hoverColor: 'rgb(255, 255, 255)',
-        hoverBackUpColor: 'rgb(0, 0, 0)',
+        thierdColor: 'rgb(237, 237,237)',
+        textColor: 'rgb(60, 64, 67)',
+        hoverColor: 'rgb(98, 150, 171)',
+        bgColor:'rgb(237, 237,237)',
       },
       fontSize: {
         small: '12px',
         base: '14px',
         large: '18px',
         xl: '24px',
+        '2xl': '28px',
       },
       maxWidth: {
         containerWidth: '1400px',
