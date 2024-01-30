@@ -24,7 +24,7 @@ function Header({ pages, phones }: { pages: page[]; phones: string[] }) {
             {pages.map(({ url, pageName }) => (
               <div
                 key={url}
-                className="m-3 hover:cursor-pointer transition-colors duration-200 text-center hover:text-hoverColor p-2 hover:bg-bgColor hover:bg-bgColor rounded-md"
+                className="m-3 hover:cursor-pointer transition-colors duration-200 text-center hover:text-hoverColor p-2 hover:bg-bgColor rounded-md"
               >
                 <Link href={url}>{pageName}</Link>
               </div>
