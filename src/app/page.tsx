@@ -1,7 +1,7 @@
+import ImageSlider from "@/components/imageSlider/ImageSlider";
+
 export default function Home() {
-  return (
-    <main>
-      
-    </main>
-  );
+  return <main>
+    <ImageSlider/>
+  </main>;
 }
