@@ -14,8 +14,10 @@ const config: Config = {
         secondColor: 'rgb(180, 180, 180)',
         thierdColor: 'rgb(237, 237,237)',
         textColor: 'rgb(60, 64, 67)',
+        textWhiteColor: 'rgb(240, 240, 240)',
         hoverColor: 'rgb(98, 150, 171)',
-        bgColor:'rgb(237, 237,237)',
+        bgColor:'rgb(230, 230,230)',
+        blackTransperent: '#00000063',
       },
       fontSize: {
         small: '12px',
@@ -24,7 +26,7 @@ const config: Config = {
         xl: '24px',
         '2xl': '28px',
       },
-      maxWidth: {
+      width: {
         containerWidth: '1400px',
       },
     },

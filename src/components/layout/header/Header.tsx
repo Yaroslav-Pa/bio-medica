@@ -1,24 +1,8 @@
 import Link from 'next/link';
-import Navigation from '../navigation/Navigation';
+import { page } from '../Layout';
+import PhoneList from '@/components/phonesList/PhoneList';
 
-export type page = { url: string; pageName: string };
-
-function Header() {
-  const phone = '+38 (096) 555 12 11';
-  const pages: page[] = [
-    {
-      url: './',
-      pageName: 'Головна',
-    },
-    {
-      url: './Services',
-      pageName: 'Усі послуги',
-    },
-    {
-      url: './Questions',
-      pageName: 'Часті питання',
-    },
-  ];
+function Header({ pages, phones }: { pages: page[]; phones: string[] }) {
 
   return (
     <>
@@ -32,10 +16,7 @@ function Header() {
                 className="max-h-[35px] sm:max-h-[50px]"
               />
             </Link>
-            <div className="font-bold text-small md:text-base">
-              <p>{phone}</p>
-              <p>{phone}</p>
-            </div>
+            <div className="font-bold text-small md:text-base"><PhoneList phones={phones}/></div>
           </div>
         </section>
         <section className="max-h-20 md:max-h-20 text-small md:text-base flex flex-row justify-center items-center bg-white">
@@ -43,7 +24,7 @@ function Header() {
             {pages.map(({ url, pageName }) => (
               <div
                 key={url}
-                className="m-3 hover:cursor-pointer transition-colors duration-200 text-center hover:text-hoverColor p-2 hover:bg-bgColor rounded-md"
+                className="m-3 hover:cursor-pointer transition-colors duration-200 text-center hover:text-hoverColor p-2 hover:bg-bgColor hover:bg-bgColor rounded-md"
               >
                 <Link href={url}>{pageName}</Link>
               </div>

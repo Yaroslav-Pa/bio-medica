@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { page } from '../header/Header';
+import { page } from '../Layout';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import {
@@ -7,30 +7,10 @@ import {
   faInstagram,
   faTelegram,
 } from '@fortawesome/free-brands-svg-icons';
-const pages: page[] = [
-  {
-    url: './',
-    pageName: 'Головна',
-  },
-  {
-    url: './Services',
-    pageName: 'Усі послуги',
-  },
-  {
-    url: './Questions',
-    pageName: 'Часті питання',
-  },
-];
-// хотів зробити нормальне перебір ссилок мапом, але не знайшов як нормально запихати щоб icon=icon, робити інший компонет не став 
-const icons = [
-  { link: '', icons: { faTwitter } },
-  { link: '', icons: { faInstagram } },
-  { link: '', icons: { faTelegram } },
-  { link: '', icons: { faEnvelope } },
-];
+import PhoneList from '@/components/phonesList/PhoneList';
 
-const phone = '+38 (096) 555 12 11';
-function Footer() {
+function Footer({ pages, phones }: { pages: page[]; phones: string[] }) {
+
   return (
     <footer className="text-textColor">
       <section className="flex flex-row justify-evenly items-center bg-firstColor py-10">
@@ -47,6 +27,7 @@ function Footer() {
         <div className="flex flex-col  gap-5">
           <div className="flex gap-5 text-xl text-buttonDarktColor">
             {/*TODO переробити */}
+            {/* хотів зробити нормальне перебір ссилок мапом, але не знайшов як нормально запихати щоб icon=icon, робити інший компонет не став бо  */}
             <FontAwesomeIcon
               icon={faTwitter}
               className="hover:text-hoverColor cursor-pointer"
@@ -65,8 +46,7 @@ function Footer() {
             />
           </div>
           <div className="font-bold text-small md:text-base text-center">
-            <p className='hover:text-hoverColor cursor-pointer'>{phone}</p>
-            <p className='hover:text-hoverColor cursor-pointer'>{phone}</p>
+            <PhoneList phones={phones}/>
           </div>
         </div>
       </section>

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { page } from '../header/Header';
+import {page} from '../layout/Layout'
 
 function Navigation({
   pages,
