@@ -18,6 +18,7 @@ const config: Config = {
         hoverColor: 'rgb(98, 150, 171)',
         bgColor:'rgb(230, 230,230)',
         blackTransperent: '#00000063',
+        buttonColor: 'rgb(60, 64, 67)',
       },
       fontSize: {
         small: '12px',

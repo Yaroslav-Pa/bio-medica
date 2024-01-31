@@ -26,10 +26,9 @@ function ImageSlider() {
       <section className="my-10 max-w-[1000px] mx-auto relative">
         <Slider {...settings} ref={(slider: any) => (customSlider.current = slider)}>
           {imagesForSlider.map(({id, title, description, buttonUrl, imgSrc}: {id: number; title: string; description: string; buttonUrl: string; imgSrc: string;}) => (
-              <div>
+              <div key={id}>
                 <div
                   className="rounded-md min-h-[500px] relative bg-cover flex flex-col justify-center items-start p-10 gap-8 text-textWhiteColor"
-                  key={id}
                   style={{ backgroundImage: `url(${imgSrc})` }}
                 >
                   <div className="absolute top-0 bottom-0 left-0 right-0 bg-blackTransperent z-0 rounded-md" />
@@ -49,13 +48,13 @@ function ImageSlider() {
             )
           )}
         </Slider>
-        {/* TODO переробити у компоненти й не зроз що тут хоче ts */}
-        <button className='absolute py-2 px-1 rounded-md top-1/2 right-2 bg-bgColor text-textColor' onClick={()=>{customSlider.current.slickNext()}}>
+        {/* TODO вирішити чи оставляти, якщо так = переробити у компоненти й не зроз що тут хоче ts */}
+        {/* <button className='absolute py-2 px-1 rounded-md top-1/2 right-2 bg-bgColor text-textColor' onClick={()=>{customSlider.current.slickNext()}}>
           {'>'}
         </button>
         <button className='absolute py-2 px-1 rounded-md top-1/2 left-2 bg-bgColor text-textColor' onClick={()=>{customSlider.current.slickPrev()}}>
           {'<'}
-        </button>
+        </button> */}
       </section>
     </>
   );
