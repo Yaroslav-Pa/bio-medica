@@ -11,7 +11,7 @@ const config: Config = {
       backgroundImage: {},
       colors: {
         firstColor: 'rgb(230, 230, 230)',
-        secondColor: 'rgb(180, 180, 180)',
+        secondColor: 'white',
         thierdColor: 'rgb(237, 237,237)',
         textColor: 'rgb(60, 64, 67)',
         textWhiteColor: 'rgb(240, 240, 240)',
@@ -19,6 +19,7 @@ const config: Config = {
         bgColor:'rgb(230, 230,230)',
         blackTransperent: '#00000063',
         buttonColor: 'rgb(60, 64, 67)',
+        cardImgBorderColor: 'rgb(60, 64, 67)',
       },
       fontSize: {
         small: '12px',
