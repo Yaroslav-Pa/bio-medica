@@ -16,7 +16,7 @@ export const Tabs = ({
           {Change.map[cityName].map((location: MapLocation) => (
             <div
               key={location.address}
-              className={`cursor-pointer p-2 rounded ${
+              className={`cursor-pointer ml-5 p-2 rounded ${
                 selectedLocation.address === location.address
                   ? 'bg-blue-500 text-white'
                   : 'hover:bg-gray-200'

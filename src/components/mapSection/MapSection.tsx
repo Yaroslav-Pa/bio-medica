@@ -19,7 +19,7 @@ const MapSection: React.FC = () => {
   );
 
   return (
-    <div className="flex">
+    <div className="flex pb-20 pl-6 pr-6">
       <div className="w-1/4 p-4">
         <h2 className="text-xl font-semibold mb-4">Адреса отделений</h2>
         <Tabs

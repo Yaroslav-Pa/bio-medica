@@ -8,7 +8,7 @@ import { ChangeView } from './ChangeView';
 const customIcon = new Icon({
   iconUrl: '/map-marker.webp',
   iconSize: [50, 50],
-  iconAnchor: [25, 50],
+  iconAnchor: [25, 25],
 });
 
 export default function Map({
