@@ -24,12 +24,13 @@ const config: Config = {
       fontSize: {
         small: '12px',
         base: '14px',
+        medium:"16px",
         large: '18px',
-        xl: '24px',
-        '2xl': '28px',
+        xl: '20px',
+        '2xl': '24px',
       },
-      width: {
-        containerWidth: '1400px',
+      maxWidth: {
+        containerWidth: '1000px',
       },
     },
   },
