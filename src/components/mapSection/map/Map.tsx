@@ -31,7 +31,11 @@ export default function Map({
       />
       <ChangeView center={coordinates} />
       {markers.map((marker) => (
-        <Marker position={marker.coordinates} icon={customIcon}>
+        <Marker
+          position={marker.coordinates}
+          icon={customIcon}
+          key={marker.address + 'marker'}
+        >
           <Popup>
             {marker.address}
             <br /> {marker.phone}
