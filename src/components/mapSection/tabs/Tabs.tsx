@@ -11,8 +11,8 @@ export const Tabs = ({
   return (
     <div className="space-y-2">
       {Object.keys(Change.map).map((cityName) => (
-        <>
-          <div key={cityName}>{cityName}</div>
+        <div key={cityName}>
+          <div>{cityName}</div>
           {Change.map[cityName].map((location: MapLocation) => (
             <div
               key={location.address}
@@ -26,7 +26,7 @@ export const Tabs = ({
               {location.address}
             </div>
           ))}
-        </>
+        </div>
       ))}
     </div>
   );
