@@ -19,7 +19,7 @@ function Header({ pages, phones }: { pages: page[]; phones: string[] }) {
             <div className="font-bold text-small md:text-base"><PhoneList phones={phones}/></div>
           </div>
         </section>
-        <section className="max-h-20 md:max-h-20 text-small md:text-base flex flex-row justify-center items-center bg-white">
+        <section className="max-h-20 md:max-h-20 text-small md:text-base flex flex-row justify-center items-center bg-secondColor">
           <nav className={'flex gap-5flex-row'}>
             {pages.map(({ url, pageName }) => (
               <div
