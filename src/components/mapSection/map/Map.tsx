@@ -1,9 +1,9 @@
 import React from 'react';
-import { MapLocation } from '@/variablesToChange';
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import { Icon } from 'leaflet';
 import { ChangeView } from './ChangeView';
+import { MapLocation } from '../../../variablesToChange';
 
 const customIcon = new Icon({
   iconUrl: '/map-marker.webp',

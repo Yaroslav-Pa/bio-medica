@@ -11,7 +11,7 @@ const MapSection: React.FC = () => {
 
   const Map = useMemo(
     () =>
-      dynamic(() => import('@/components/mapSection/map/Map'), {
+      dynamic(() => import('./map/Map'), {
         loading: () => <p>A map is loading</p>,
         ssr: false,
       }),
