@@ -1,5 +1,6 @@
-import Link from 'next/link';
+import React from 'react';
 import Certificate from './Certificate';
+import { Button } from '../button/Button';
 
 function CertificateSection() {
   const cards = [
@@ -43,17 +44,10 @@ function CertificateSection() {
   ];
   return (
     <section className=" bg-firstColor my-10">
-      <div className="max-w-[1000px] mx-auto flex flex-col gap-2 px-3 py-10">
+      <div className="max-w-containerWidth mx-auto flex flex-col gap-4 px-3 py-10">
         <div className="flex items-center gap-5">
           <h1 className="text-xl">Ліцензії та сертифікати</h1>
-          <Link
-            // TODO перевірити посилання на сторінку @усіх аналізів@
-            // можна переробити у компонент та закинути змінні для max-w max-h й так керувати розміром
-            href="./Services"
-            className="p-2 bg-transparent hover:bg-buttonColor border-2 border-solid rounded-lg transition-colors duration-300 border-buttonColor text-textColor hover:text-textWhiteColor"
-          >
-            Всі
-          </Link>
+          <Button href="./Services">Всі</Button>
         </div>
         <article className="grid grid-cols-2 md:grid-cols-4 gap-5 justify-center items-center">
           {cards &&

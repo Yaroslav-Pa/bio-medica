@@ -10,13 +10,13 @@ const config: Config = {
     extend: {
       backgroundImage: {},
       colors: {
-        firstColor: 'rgb(230, 230, 230)',
+        firstColor: '#DBF3FF',
         secondColor: 'white',
-        thierdColor: 'rgb(237, 237,237)',
+        thierdColor: '#71CFFF',
         textColor: 'rgb(60, 64, 67)',
         textWhiteColor: 'rgb(240, 240, 240)',
-        hoverColor: 'rgb(98, 150, 171)',
-        bgColor:'rgb(230, 230,230)',
+        hoverColor: '#DBF3FF',
+        bgColor: 'rgb(230, 230,230)',
         blackTransperent: '#00000063',
         buttonColor: 'rgb(60, 64, 67)',
         cardImgBorderColor: 'rgb(60, 64, 67)',
@@ -24,7 +24,7 @@ const config: Config = {
       fontSize: {
         small: '12px',
         base: '14px',
-        medium:"16px",
+        medium: '16px',
         large: '18px',
         xl: '20px',
         '2xl': '24px',

@@ -12,7 +12,7 @@ function Certificate({
   return (
     <Link
       href={url}
-      className="bg-secondColor flex flex-col items-center gap-3 h-[100%] p-2 rounded-lg"
+      className="bg-secondColor flex flex-col items-center gap-3 h-[100%] p-2 rounded-lg shadow-md hover:shadow-2xl transition-shadow"
     >
       <img
         src={img}

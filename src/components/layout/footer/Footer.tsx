@@ -10,7 +10,6 @@ import {
 import PhoneList from '@/components/phonesList/PhoneList';
 
 function Footer({ pages, phones }: { pages: page[]; phones: string[] }) {
-
   return (
     <footer className="text-textColor">
       <section className="flex flex-row justify-evenly items-center bg-firstColor py-10">
@@ -46,7 +45,7 @@ function Footer({ pages, phones }: { pages: page[]; phones: string[] }) {
             />
           </div>
           <div className="font-bold text-small md:text-base text-center">
-            <PhoneList phones={phones}/>
+            <PhoneList phones={phones} />
           </div>
         </div>
       </section>

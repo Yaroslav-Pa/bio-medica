@@ -3,7 +3,6 @@ import { page } from '../Layout';
 import PhoneList from '@/components/phonesList/PhoneList';
 
 function Header({ pages, phones }: { pages: page[]; phones: string[] }) {
-
   return (
     <>
       <header className="drop-shadow-xl">
@@ -16,7 +15,9 @@ function Header({ pages, phones }: { pages: page[]; phones: string[] }) {
                 className="max-h-[35px] sm:max-h-[50px]"
               />
             </Link>
-            <div className="font-bold text-small md:text-base"><PhoneList phones={phones}/></div>
+            <div className="font-bold text-small md:text-base">
+              <PhoneList phones={phones} />
+            </div>
           </div>
         </section>
         <section className="max-h-20 md:max-h-20 text-small md:text-base flex flex-row justify-center items-center bg-secondColor">
@@ -24,7 +25,7 @@ function Header({ pages, phones }: { pages: page[]; phones: string[] }) {
             {pages.map(({ url, pageName }) => (
               <div
                 key={url}
-                className="m-3 hover:cursor-pointer transition-colors duration-200 text-center hover:text-hoverColor p-2 hover:bg-bgColor rounded-md"
+                className="m-3 hover:cursor-pointer transition-colors duration-200 text-center p-2 hover:bg-thierdColor rounded-md"
               >
                 <Link href={url}>{pageName}</Link>
               </div>

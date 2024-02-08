@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Card from '../card/Card';
+import { Button } from '../button/Button';
 
 function TopServices() {
   const cards = [
@@ -10,7 +11,7 @@ function TopServices() {
         'Розгорнутий аналіз крові (апаратна методика, ручний підрахунок лейкоцитарної формули, ШОЕ) (ЗАК, CBC)',
       timeInDays: 1,
       price: 300,
-      url:'https://erudyt.org/wp-content/uploads/2018/08/pexels-photo.jpg',
+      url: 'https://erudyt.org/wp-content/uploads/2018/08/pexels-photo.jpg',
     },
     {
       id: 1,
@@ -18,7 +19,7 @@ function TopServices() {
       title: 'Глюкоза (Glucose, GLU)',
       timeInDays: 12,
       price: 3,
-      url:'https://erudyt.org/wp-content/uploads/2018/08/pexels-photo.jpg',
+      url: 'https://erudyt.org/wp-content/uploads/2018/08/pexels-photo.jpg',
     },
     {
       id: 2,
@@ -27,7 +28,7 @@ function TopServices() {
         'Розгорнутий аналіз крові (апаратна методика, ручний підрахунок лейкоцитарної формули, ШОЕ) (ЗАК, CBC)',
       timeInDays: 2,
       price: 3,
-      url:'https://erudyt.org/wp-content/uploads/2018/08/pexels-photo.jpg',
+      url: 'https://erudyt.org/wp-content/uploads/2018/08/pexels-photo.jpg',
     },
     {
       id: 3,
@@ -36,7 +37,7 @@ function TopServices() {
         'Розгорнутий аналіз крові (апаратна методика, ручний підрахунок лейкоцитарної формули, ШОЕ) (ЗАК, CBC)',
       timeInDays: 1,
       price: 300,
-      url:'https://erudyt.org/wp-content/uploads/2018/08/pexels-photo.jpg',
+      url: 'https://erudyt.org/wp-content/uploads/2018/08/pexels-photo.jpg',
     },
     {
       id: 4,
@@ -44,7 +45,7 @@ function TopServices() {
       title: 'Глюкоза (Glucose, GLU)',
       timeInDays: 12,
       price: 3,
-      url:'https://erudyt.org/wp-content/uploads/2018/08/pexels-photo.jpg',
+      url: 'https://erudyt.org/wp-content/uploads/2018/08/pexels-photo.jpg',
     },
     {
       id: 5,
@@ -53,7 +54,7 @@ function TopServices() {
         'Розгорнутий аналіз крові (апаратна методика, ручний підрахунок лейкоцитарної формули, ШОЕ) (ЗАК, CBC)',
       timeInDays: 2,
       price: 3,
-      url:'https://erudyt.org/wp-content/uploads/2018/08/pexels-photo.jpg',
+      url: 'https://erudyt.org/wp-content/uploads/2018/08/pexels-photo.jpg',
     },
   ];
   return (
@@ -75,14 +76,10 @@ function TopServices() {
                 </div>
               ))}
           </div>
-          <Link
-            // TODO перевірити посилання на сторінку @усіх аналізів@
-            // можна переробити у компонент та закинути змінні для max-w max-h й так керувати розміром
-            href="./Services"
-            className="p-2 bg-transparent hover:bg-buttonColor border-2 border-solid rounded-lg transition-colors duration-300 border-buttonColor text-textColor hover:text-textWhiteColor"
-          >
-            Продивитись усі
-          </Link>
+          {/* // TODO перевірити посилання на сторінку @усіх аналізів@ // можна
+          переробити у компонент та закинути змінні для max-w max-h й так
+          керувати розміром */}
+          <Button href="./Services">Продивитись усі</Button>
         </article>
       </div>
     </section>

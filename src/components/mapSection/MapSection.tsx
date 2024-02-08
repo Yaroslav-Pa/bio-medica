@@ -21,7 +21,7 @@ const MapSection: React.FC = () => {
   return (
     <div className="flex pb-20 pl-6 pr-6">
       <div className="w-1/4 p-4">
-        <h2 className="text-xl font-semibold mb-4">Адреса отделений</h2>
+        <h2 className="text-xl font-semibold mb-4">Адреса відділень</h2>
         <Tabs
           onTabClick={setSelectedLocation}
           selectedLocation={selectedLocation}
@@ -29,7 +29,7 @@ const MapSection: React.FC = () => {
       </div>
 
       <div className="w-3/4 p-4">
-        <h2 className="text-xl font-semibold mb-4">Карта отделений</h2>
+        <h2 className="text-xl font-semibold mb-4">Карта відділень</h2>
         <Map
           selectedLocation={selectedLocation}
           markers={Object.values(Change.map).reduce(
