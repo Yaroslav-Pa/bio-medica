@@ -1,0 +1,17 @@
+.radial-gradient {
+  background: radial-gradient(
+    circle at left,
+    #71cfff 0%,
+    #71cfff 75%,
+    #71cfff 79%,
+    #71cfff 85%
+  );
+}
+
+.icon-gradient {
+  background: radial-gradient(
+    circle at left,
+    rgb(255, 255, 255) 98%,
+    rgba(147, 237, 255, 0) 99%
+  );
+}
