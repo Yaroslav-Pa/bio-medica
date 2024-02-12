@@ -16,7 +16,7 @@ const pages: page[] = [
   },
   {
     url: './Questions',
-    pageName: 'Пациенту',
+    pageName: 'Пацієнту',
   },
 ];
 
