@@ -8,6 +8,7 @@ import {
   faTelegram,
 } from '@fortawesome/free-brands-svg-icons';
 import PhoneList from '@/components/phonesList/PhoneList';
+import { Change } from '@/variablesToChange';
 
 function Footer({ pages, phones }: { pages: page[]; phones: string[] }) {
   return (
@@ -25,24 +26,14 @@ function Footer({ pages, phones }: { pages: page[]; phones: string[] }) {
         </nav>
         <div className="flex flex-col  gap-5">
           <div className="flex gap-5 text-xl text-buttonDarktColor">
-            {/*TODO переробити */}
-            {/* хотів зробити нормальне перебір ссилок мапом, але не знайшов як нормально запихати щоб icon=icon, робити інший компонет не став бо  */}
-            <FontAwesomeIcon
-              icon={faTwitter}
-              className="hover:text-hoverColor cursor-pointer"
-            />
-            <FontAwesomeIcon
-              icon={faInstagram}
-              className="hover:text-hoverColor cursor-pointer"
-            />
-            <FontAwesomeIcon
-              icon={faTelegram}
-              className="hover:text-hoverColor cursor-pointer"
-            />
-            <FontAwesomeIcon
-              icon={faEnvelope}
-              className="hover:text-hoverColor cursor-pointer"
-            />
+            {Change.socials.map(({ url, icon, name }) => (
+              <Link href={url} title={name}>
+                <FontAwesomeIcon
+                  icon={icon}
+                  className="hover:text-hoverColor cursor-pointer"
+                />
+              </Link>
+            ))}
           </div>
           <div className="font-bold text-small md:text-base text-center">
             <PhoneList phones={phones} />
