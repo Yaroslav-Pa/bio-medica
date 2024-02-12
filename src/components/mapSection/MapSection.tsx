@@ -3,6 +3,7 @@ import React, { useMemo, useState } from 'react';
 import dynamic from 'next/dynamic';
 import { Change, MapLocation } from '../../variablesToChange/index';
 import { Tabs } from './tabs/Tabs';
+import { DataView } from './dataView/DataView';
 
 const MapSection: React.FC = () => {
   const [selectedLocation, setSelectedLocation] = useState<MapLocation>(
@@ -28,7 +29,7 @@ const MapSection: React.FC = () => {
         ></Tabs>
       </div>
 
-      <div className="w-3/4 p-4">
+      <div className="w-3/4 p-4 relative">
         <h2 className="text-xl font-semibold mb-4">Карта відділень</h2>
         <Map
           selectedLocation={selectedLocation}
@@ -37,6 +38,7 @@ const MapSection: React.FC = () => {
             [] as MapLocation[]
           )}
         />
+        <DataView location={selectedLocation} />
       </div>
     </div>
   );

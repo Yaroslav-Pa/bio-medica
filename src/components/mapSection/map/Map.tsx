@@ -12,7 +12,7 @@ const customIcon = new Icon({
 });
 
 export default function Map({
-  selectedLocation: { coordinates },
+  selectedLocation,
   markers,
 }: {
   selectedLocation: MapLocation;
@@ -20,7 +20,7 @@ export default function Map({
 }) {
   return (
     <MapContainer
-      center={coordinates}
+      center={selectedLocation.coordinates}
       zoom={100}
       scrollWheelZoom={false}
       style={{ height: '100%', minHeight: '100%' }}
@@ -29,7 +29,7 @@ export default function Map({
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      <ChangeView center={coordinates} />
+      <ChangeView center={selectedLocation.coordinates} />
       {markers.map((marker) => (
         <Marker
           position={marker.coordinates}

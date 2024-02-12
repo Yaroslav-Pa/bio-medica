@@ -3,7 +3,7 @@ import Footer from './footer/Footer';
 import Header from './header/Header';
 import { Change } from '../../variablesToChange/index';
 export type page = { url: string; pageName: string };
-const {phones} = Change;
+const { phones } = Change;
 
 const pages: page[] = [
   {
@@ -12,20 +12,20 @@ const pages: page[] = [
   },
   {
     url: './Services',
-    pageName: 'Усі послуги',
+    pageName: 'Перелік аналізів',
   },
   {
     url: './Questions',
-    pageName: 'Часті питання',
+    pageName: 'Пациенту',
   },
 ];
 
 function Layout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <>
-      <Header pages={pages} phones={phones}/>
+      <Header pages={pages} phones={phones} />
       {children}
-      <Footer pages={pages} phones={phones}/>
+      <Footer pages={pages} phones={phones} />
     </>
   );
 }
