@@ -63,19 +63,20 @@ function AboutUs() {
             </a>
           </div>
           <div className="grid grid-cols-2 grid-rows-2  gap-1 min-w-fit items-center">
-            {blocs.map((block) => (
+            {blocs.map(({text, number, img, styleRounded}) => (
               <InfoBlock
-                text={block.text}
-                number={block.number}
-                img={block.img}
-                styleRounded={block.styleRounded}
+                key={text}
+                text={text}
+                number={number}
+                img={img}
+                styleRounded={styleRounded}
               />
             ))}
           </div>
         </article>
-        <div className="flex justify-center items-center">
+        {/* <div className="flex justify-center items-center">
           <YouTubeVideo videoId={'stUyuEVZlU4'} />
-        </div>
+        </div> */}
       </section>
     </div>
   );
