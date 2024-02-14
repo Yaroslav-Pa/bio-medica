@@ -13,45 +13,6 @@ function CertificateSection() {
   useEffect(() => {
     getFromApi(storyBlockApi, setCards);
   }, []);
-  // const cards = [
-  //   {
-  //     id: 0,
-  //     img: 'https://7universum.com/cert/med.png',
-  //     title: 'Сертификат',
-  //     url: 'https://7universum.com/cert/med.png',
-  //   },
-  //   {
-  //     id: 1,
-  //     img: 'https://7universum.com/cert/med.png',
-  //     title: 'Сертификат сертификатов',
-  //     url: 'https://7universum.com/cert/med.png',
-  //   },
-  //   {
-  //     id: 2,
-  //     img: 'https://7universum.com/cert/med.png',
-  //     title: 'Сертификат сертификат сертификатов',
-  //     url: 'https://7universum.com/cert/med.png',
-  //   },
-  //   {
-  //     id: 3,
-  //     img: 'https://7universum.com/cert/med.png',
-  //     title: 'Сертификат сертификат сертификат сертификатов',
-  //     url: 'https://7universum.com/cert/med.png',
-  //   },
-  //   {
-  //     id: 4,
-  //     img: 'https://7universum.com/cert/med.png',
-  //     title: 'Глюкоза (Glucose, GLU)',
-  //     url: 'https://7universum.com/cert/med.png',
-  //   },
-  //   {
-  //     id: 5,
-  //     img: 'https://7universum.com/cert/med.png',
-  //     title:
-  //       'Розгорнутий аналіз крові (апаратна методика, ручний підрахунок лейкоцитарної формули, ШОЕ) (ЗАК, CBC)',
-  //     url: 'https://7universum.com/cert/med.png',
-  //   },
-  // ];
   return (
     <section className=' bg-firstColor my-10'>
       <div className='max-w-containerWidth mx-auto flex flex-col gap-4 px-3 py-10'>

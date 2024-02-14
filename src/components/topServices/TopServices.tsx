@@ -39,9 +39,7 @@ function TopServices() {
           <div className='grid grid-cols-3 gap-10 justify-stretch items-stretch'>
             {cards && cardListing}
           </div>
-          {/* // TODO перевірити посилання на сторінку @усіх аналізів@ // можна
-          переробити у компонент та закинути змінні для max-w max-h й так
-          керувати розміром */}
+          {/* // TODO перевірити посилання на сторінку @усіх аналізів*/}
           <Button href='./Services'>Продивитись усі</Button>
         </article>
       </div>

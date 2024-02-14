@@ -1,8 +1,5 @@
 'use client';
 import { useRef, useState } from 'react';
-import Link from 'next/link';
-import { Change } from '../../variablesToChange';
-import axios from 'axios';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -43,30 +40,11 @@ function ImageSlider() {
                     className='rounded-md relative bg-cover bg-clip-padding bg-center min-h-[670px] flex flex-col bg-no-repeat justify-center items-start p-10 gap-8 text-textWhiteColor'
                     style={{ backgroundImage: `url(${filename})` }}
                   >
-                    {/* <div className='absolute top-0 bottom-0 left-0 right-0 bg-blackTransperent z-0 rounded-md' />
-                  <div className='flex flex-col gap-3 z-10 relative'>
-                    <h1 className='text-xl'>{title}</h1>
-                    <p>{description}</p>
-                  </div>
-
-                  <Link
-                    href={buttonUrl}
-                    className='p-2 bg-bgColor hover:bg-transparent border-2 border-solid rounded-lg transition-colors duration-300 border-bgColor text-textColor hover:text-textWhiteColor z-10'
-                  >
-                    Дізнатись більше
-                  </Link> */}
                   </div>
                 </div>
               )
             )}
           </Slider>
-          {/* TODO вирішити чи оставляти, якщо так = переробити у компоненти й не зроз що тут хоче ts */}
-          {/* <button className='absolute py-2 px-1 rounded-md top-1/2 right-2 bg-bgColor text-textColor' onClick={()=>{customSlider.current.slickNext()}}>
-          {'>'}
-        </button>
-        <button className='absolute py-2 px-1 rounded-md top-1/2 left-2 bg-bgColor text-textColor' onClick={()=>{customSlider.current.slickPrev()}}>
-          {'<'}
-        </button> */}
         </section>
       )}
     </>
