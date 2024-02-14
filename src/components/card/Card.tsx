@@ -5,22 +5,22 @@ function Card({
   title,
   timeInDays,
   price,
-  url,
+  url='',
 }: {
   img: string;
   title: string;
   timeInDays: number;
   price: number;
-  url: string;
+  url?: string;
 }) {
   return (
     <Link href={url}>
-      <section className="bg-secondColor flex flex-col items-center justify-between p-8 rounded-md  max-w-[250px] h-[370px] shadow-md hover:shadow-2xl transition-shadow">
+      <section className="bg-secondColor flex flex-col items-center justify-between p-8 rounded-md  min-w-[270px] min-h-[380px] shadow-md hover:shadow-2xl transition-shadow">
         <div className="flex flex-col items-center gap-3">
           <img
             src={img}
             alt="icon"
-            className=" h-[100px] max-w-[100px] rounded-full border-2 border-cardImgBorderColor border-solid"
+            className=" h-[120px] max-w-[120px] rounded-full border-4 border-solid"
           />
           <h2 className=" text-base text-center">{title}</h2>
         </div>
