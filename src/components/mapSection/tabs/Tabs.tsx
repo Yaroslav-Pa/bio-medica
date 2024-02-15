@@ -18,8 +18,8 @@ export const Tabs = ({
               key={location.address}
               className={`cursor-pointer transition-colors ml-5 p-2 rounded border-2 border-solid ${
                 selectedLocation.address === location.address
-                  ? 'border-thirdColor'
-                  : 'hover:bg-firstColor border-secondColor'
+                  ? 'border-orangeDark hover:bg-orangeLight'
+                  : 'hover:bg-thirdColor border-secondColor'
               }`}
               onClick={() => onTabClick(location)}
             >

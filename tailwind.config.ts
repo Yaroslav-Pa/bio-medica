@@ -10,9 +10,11 @@ const config: Config = {
     extend: {
       backgroundImage: {},
       colors: {
-        firstColor: '#DBF3FF',
+        firstColor: '#62f8f7',
         secondColor: 'white',
-        thirdColor: '#71CFFF',
+        thirdColor: '#affbfb',
+        orangeLight: '#ffc895',
+        orangeDark: '#ffaf66',
         textColor: 'rgb(60, 64, 67)',
         textWhiteColor: 'rgb(240, 240, 240)',
         hoverColor: '#3c6c85',

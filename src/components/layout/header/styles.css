@@ -1,10 +1,10 @@
 .radial-gradient {
-  background: radial-gradient(
-    circle at left,
-    #71cfff 0%,
-    #71cfff 75%,
-    #71cfff 79%,
-    #71cfff 85%
+  background: rgb(255, 135, 64);
+  background: linear-gradient(
+    45deg,
+    rgba(255, 135, 64, 1) 20%,
+    rgba(174, 231, 205, 1) 50%,
+    rgba(0, 214, 224, 1) 80%
   );
 }
 
