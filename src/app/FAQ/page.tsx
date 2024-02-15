@@ -3,7 +3,7 @@ import { getFromApi } from '@/apiGetter';
 import { useEffect, useState } from 'react';
 
 const storyBlockApi =
-  'https://api.storyblok.com/v2/cdn/stories/faq?cv=1708031547&token=FYShrSsmafxPX5CaF9YMKAtt&version=published';
+  'https://api.storyblok.com/v2/cdn/stories/faq?version=published&token=FYShrSsmafxPX5CaF9YMKAtt&cv=1708031949';
 
 function Faqs() {
   const [infoArr, setInfoArr] = useState({ Sections: [] });
@@ -14,7 +14,7 @@ function Faqs() {
 
   return (
     <>
-      <div className='mx-auto flex flex-col '>
+      <div className='mx-auto flex flex-col max-w-[1200px]'>
         <section className='m-[10%] md:m-20 flex flex-col gap-20'>
           {infoArr.Sections &&
             infoArr.Sections.map(
