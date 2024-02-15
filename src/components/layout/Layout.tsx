@@ -7,16 +7,16 @@ const { phones } = Change;
 
 const pages: page[] = [
   {
-    url: './',
+    url: '/',
     pageName: 'Головна',
   },
   {
-    url: './Services',
+    url: '/AllServices',
     pageName: 'Перелік аналізів',
   },
   {
-    url: './Questions',
-    pageName: 'Пациенту',
+    url: '/FAQ',
+    pageName: 'Часті запитання',
   },
 ];
 

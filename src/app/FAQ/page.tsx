@@ -1,5 +1,7 @@
 function Faqs() {
-  return ( <></> );
+  return ( <>
+    
+  </> );
 }
 
 export default Faqs;
