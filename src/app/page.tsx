@@ -1,17 +1,20 @@
+"use client"
 import React from 'react';
-import AboutUs from "@/components/aboutUs/AboutUs";
-import ImageSlider from "@/components/imageSlider/ImageSlider";
-import TopServices from "@/components/topServices/TopServices";
-import CertificateSection from '@/components/certificateSection/CertificateSection';
-import MapSection from '@/components/mapSection/MapSection';
-
+import HomePage from '../pages/home/Home';
+import Faqs from '../pages/faq/Faqs';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
 
 export default function Home() {
   return <main>
-    <ImageSlider/>
-    <TopServices/>
-    <AboutUs/>
-    <CertificateSection></CertificateSection>
-    <MapSection></MapSection>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/faq" element={<Faqs />} />
+      </Routes>
+    </BrowserRouter>
   </main>;
 }
