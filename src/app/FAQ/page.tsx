@@ -21,17 +21,15 @@ function Faqs() {
   );
 
   return (
-    <>
-      <div className='mx-auto flex flex-col max-w-[1200px]'>
-        <section className='m-[10%] md:m-20 flex flex-col gap-20'>
-          {infoArr.Sections && (
-            <SectionWithName arr={infoArr.Sections}>
-              <div className='ml-5 flex flex-col gap-14'>{questionListing}</div>
-            </SectionWithName>
-          )}
-        </section>
-      </div>
-    </>
+    <div className='mx-auto flex flex-col max-w-[1200px]'>
+      <section className='m-[10%] md:m-20 flex flex-col gap-20'>
+        {infoArr.Sections && (
+          <SectionWithName arr={infoArr.Sections}>
+            <div className='ml-5 flex flex-col gap-14'>{questionListing}</div>
+          </SectionWithName>
+        )}
+      </section>
+    </div>
   );
 }
 

@@ -4,28 +4,17 @@ import Card from '../card/Card';
 import { Button } from '../button/Button';
 import { getFromApi } from '../../apiGetter';
 import { useEffect, useState } from 'react';
-
-const standartImg =
-  'https://erudyt.org/wp-content/uploads/2018/08/pexels-photo.jpg';
 const storyBlockApi =
-  'https://api.storyblok.com/v2/cdn/stories/allservices?cv=1707936437&token=FYShrSsmafxPX5CaF9YMKAtt&version=published';
+  'https://api.storyblok.com/v2/cdn/stories/topservices?cv=1708287624&token=FYShrSsmafxPX5CaF9YMKAtt&version=published';
 
 function TopServices() {
   const [cards, setCards] = useState({ AllSevices: [] });
 
-  const cardListing = cards.AllSevices.map(
-    ({ _uid, Image: { filename }, Name, Days, Price, url }) => (
-      <div key={_uid}>
-        <Card
-          img={filename === '' ? standartImg : filename}
-          title={Name}
-          timeInDays={Days}
-          price={Price}
-          url={url}
-        />
-      </div>
-    )
-  );
+  const cardListing = cards.AllSevices.map((card: any) => (
+    <div key={card._uid}>
+      <Card card={card} />
+    </div>
+  ));
 
   useEffect(() => {
     getFromApi(storyBlockApi, setCards);
