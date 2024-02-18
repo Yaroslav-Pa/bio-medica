@@ -1,47 +1,34 @@
 'use client';
 import { getFromApi } from '@/apiGetter';
+import QuestionAnswer from '@/components/questionAnswer/QuestionAnswer';
+import SectionWithName from '@/components/sectionWithName/SectionWithName';
 import { useEffect, useState } from 'react';
 
 const storyBlockApi =
   'https://api.storyblok.com/v2/cdn/stories/faq?version=published&token=FYShrSsmafxPX5CaF9YMKAtt&cv=1708031949';
 
 function Faqs() {
-  const [infoArr, setInfoArr] = useState({ Sections: [] });
+  const [infoArr, setInfoArr] = useState({ Sections: [{ Questions: [] }] });
 
   useEffect(() => {
     getFromApi(storyBlockApi, setInfoArr);
   }, []);
 
+  const questionListing = infoArr.Sections.map(({ Questions }) =>
+    Questions.map(({ Question, Answer }) => (
+      <QuestionAnswer question={Question} answer={Answer} />
+    ))
+  );
+
   return (
     <>
       <div className='mx-auto flex flex-col max-w-[1200px]'>
         <section className='m-[10%] md:m-20 flex flex-col gap-20'>
-          {infoArr.Sections &&
-            infoArr.Sections.map(
-              ({
-                nameOfSection,
-                Questions,
-              }: {
-                nameOfSection: string;
-                Questions: [];
-              }) => (
-                <div className='gap-10 flex flex-col'>
-                  <h1 className='pl-3 border-b-2 text-xl font-semibold'>
-                    {nameOfSection}
-                  </h1>
-                  <div className='ml-5 flex flex-col gap-14'>
-                    {Questions && Questions.map(({ Question, Answer }) => (
-                      <article className='flex flex-col gap-3 pl-3 border-l-2'>
-                        <p className='text-large'>&#x2022; {Question}</p>
-                        <p className='ml-7 text-large max-w-[1000px]'>
-                          {Answer}
-                        </p>
-                      </article>
-                    ))}
-                  </div>
-                </div>
-              )
-            )}
+          {infoArr.Sections && (
+            <SectionWithName arr={infoArr.Sections}>
+              <div className='ml-5 flex flex-col gap-14'>{questionListing}</div>
+            </SectionWithName>
+          )}
         </section>
       </div>
     </>
