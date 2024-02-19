@@ -12,25 +12,52 @@ function AllServices() {
   const [servicesArr, setServicesArr] = useState({
     Sections: [{ Objects: [] }],
   });
+  const [search, setSearch] = useState('');
+  const [serchedServices, setSerchedServices] = useState([]);
+  const flattedAllServices: any[] = [];
 
   useEffect(() => {
     getFromApi(storyBlockApi, setServicesArr);
   }, []);
 
   const servicesListing = servicesArr.Sections.map(({ Objects }) =>
-    Objects.map((card: any) => <Card card={card} key={card._uid} />)
+    Objects.map((card: any) => {
+      flattedAllServices.push(card);
+      return <Card card={card} key={card._uid} />;
+    })
   );
 
+  useEffect(() => {
+    setSerchedServices(filterSearch(search));
+  }, [search]);
+  const filterSearch = (searchText: string) =>
+    flattedAllServices.filter(({ Name }) =>
+      Name.toLowerCase().includes(searchText.toLowerCase())
+    );
   return (
     <div className='mx-auto flex flex-col max-w-[1200px]'>
       <section className='m-[10%] md:m-20 flex flex-col gap-20'>
-        {servicesArr.Sections && (
+        <input
+          className='border-2 rounded-lg px-4 py-1'
+          type='text'
+          name='searchField'
+          value={search}
+          onChange={(e) => {
+            setSearch(e.target.value);
+          }}
+        />
+        {search === '' && servicesArr.Sections && (
           <SectionWithName arr={servicesArr.Sections}>
             <div className='grid grid-cols-3 gap-10 justify-stretch items-stretch'>
               {servicesListing}
             </div>
           </SectionWithName>
         )}
+        <div className='grid grid-cols-3 gap-10 justify-stretch items-stretch'>
+          {serchedServices.map((card: any) => (
+            <Card card={card} key={card._uid} />
+          ))}
+        </div>
       </section>
     </div>
   );
