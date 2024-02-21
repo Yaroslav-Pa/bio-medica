@@ -29,7 +29,7 @@ function TopServices() {
             {cards && cardListing}
           </div>
           {/* // TODO перевірити посилання на сторінку @усіх аналізів*/}
-          <Button href='./Services'>Продивитись усі</Button>
+          <Button href='./AllServices'>Продивитись усі</Button>
         </article>
       </div>
     </section>

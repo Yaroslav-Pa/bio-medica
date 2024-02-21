@@ -20,7 +20,7 @@ function Footer({ pages, phones }: { pages: page[]; phones: string[] }) {
       <div className="flex flex-col  gap-5">
         <div className="flex gap-5 text-xl text-buttonDarktColor">
           {Change.socials.map(({ url, icon, name }) => (
-            <Link href={url} title={name}>
+            <Link href={url} title={name} key={url}>
               <FontAwesomeIcon
                 icon={icon}
                 className="hover:text-hoverColor cursor-pointer"
