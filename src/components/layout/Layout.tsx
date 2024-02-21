@@ -15,8 +15,8 @@ const pages: page[] = [
     pageName: 'Перелік аналізів',
   },
   {
-    url: '/FAQ',
-    pageName: 'Часті запитання',
+    url: './Questions',
+    pageName: 'Пациенту',
   },
 ];
 

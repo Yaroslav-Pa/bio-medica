@@ -1,3 +1,10 @@
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
+import {
+  faFacebook,
+  faInstagram,
+  faTelegram,
+} from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { LatLngTuple } from 'leaflet';
 
 type ImageForSlider = {
@@ -18,10 +25,17 @@ export type MapLocation = {
   };
 };
 
+export type Social = {
+  name: string;
+  url: string;
+  icon: IconDefinition;
+};
+
 type MyData = {
   imagesForSlider: ImageForSlider[];
   phones: string[];
   map: Record<string, MapLocation[]>;
+  socials: Social[];
 };
 
 export const Change: MyData = {
@@ -45,6 +59,12 @@ export const Change: MyData = {
     },
   ],
   phones: ['+38(096) 201 23 45', '+38(090) 123 12 33'],
+  socials: [
+    { name: 'facebook', url: 'https://facebook.com', icon: faFacebook },
+    { name: 'instagram', url: 'https://instagram.com', icon: faInstagram },
+    { name: 'telegram', url: 'https://telegram.com', icon: faTelegram },
+    { name: 'email', url: 'https://email.com', icon: faEnvelope },
+  ],
   map: {
     'м. Запоріжжя': [
       {

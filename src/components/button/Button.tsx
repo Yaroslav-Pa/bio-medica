@@ -5,7 +5,7 @@ export const Button = ({ href, children }: { href: string; children: any }) => {
   return (
     <Link
       href={href}
-      className="p-2 hover:bg-thierdColor border-2 border-solid border-[#778d99] rounded-lg transition-colors duration-300 text-textColor font-bold"
+      className="p-2 hover:bg-orangeLight bg-secondColor border-2 border-solid border-orangeDark rounded-lg transition-colors duration-300 text-textColor font-bold"
     >
       {children}
     </Link>
