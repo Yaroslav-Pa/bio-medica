@@ -45,8 +45,10 @@ function AboutUs() {
     <div className="flex flex-col justify-center items-center my-10">
       <section className="max-w-containerWidth flex flex-col gap-10 p-8">
         <article className="flex flex-row justify-center items-center gap-24">
+          
           <div className="flex flex-col gap-5 max-w-[500px]">
-            <h1 className="text-large">Медична лабораторія</h1>
+            <h1 className='text-xl font-bold'>Про нас</h1>
+            <h2 className="text-medium">Медична лабораторія</h2>
             <p className="text-base font-light">
               Ми спеціалізуємося на проведенні лабораторних досліджень
               найрізноманітніших аналітів: крові, сечі, калу, ліквору, мокроти,

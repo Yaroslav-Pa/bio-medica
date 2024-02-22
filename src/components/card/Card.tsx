@@ -1,6 +1,8 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
 const standartImg =
   'https://erudyt.org/wp-content/uploads/2018/08/pexels-photo.jpg';
+import { faHeartPulse } from '@fortawesome/free-solid-svg-icons';
 
 function Card({
   card,
@@ -18,25 +20,33 @@ function Card({
     Name,
     Days,
     Price,
-    url='',
+    url = '',
   } = card;
   return (
     <Link href={url}>
-      <section className='bg-secondColor flex flex-col items-center justify-between p-8 rounded-md  min-w-[270px] min-h-[380px] shadow-md hover:shadow-2xl transition-shadow'>
-        <div className='flex flex-col items-center gap-3'>
-          <img
-            src={filename === '' ? standartImg : filename}
-            alt='icon'
-            className=' h-[120px] max-w-[120px] rounded-full border-4 border-solid'
-          />
-          <h2 className=' text-base text-center'>{Name}</h2>
+      <section className='bg-secondColor flex flex-col items-center justify-between p-5 rounded-lg  max-w-[260px] min-h-[350px] shadow-md hover:shadow-2xl transition-shadow border-[1px] border-[#009fa9]'>
+        <div className='flex flex-col items-center gap-3 '>
+          {filename === '' ? (
+            <FontAwesomeIcon
+              icon={faHeartPulse}
+              className='text-[60px] text-[#00d6e0] mt-[30px] mb-[20px]'
+            />
+          ) : (
+            <img
+            onClick={async()=>console.log( await fetch(filename))}
+              src={filename === '' ? standartImg : filename}
+              alt='icon'
+              className='h-[90px] max-w-[90px]  rounded-full my-[10px]'
+            />
+          )}
+          <h2 className='text-[15px] text-center max-w-[250px]'>{Name}</h2>
         </div>
 
         <div className='flex flex-row justify-between items-center w-full'>
-          <p className='text-center py-1 px-3 bg-firstColor rounded-md'>
+          <p>
             {Days} дн.
           </p>
-          <p>{Price} грн.</p>
+          <p className='text-center py-1 px-3 bg-[#009fa9] text-white font-bold rounded-md'>{Price} грн.</p>
         </div>
       </section>
     </Link>

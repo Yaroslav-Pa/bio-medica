@@ -23,7 +23,7 @@ function TopServices() {
   return (
     <section className=' bg-firstColor my-10'>
       <div className='max-w-[1000px] mx-auto flex flex-col gap-10 px-3 py-10'>
-        <h1 className='text-xl'>ТОП аналізів</h1>
+        <h1 className='text-xl font-bold'>ТОП аналізів</h1>
         <article className='flex flex-col justify-center items-center gap-10'>
           <div className='grid grid-cols-3 gap-10 justify-stretch items-stretch'>
             {cards && cardListing}
