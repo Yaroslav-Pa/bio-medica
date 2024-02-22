@@ -24,7 +24,7 @@ function Layout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <>
       <Header pages={pages} phones={phones} />
-      {children}
+      <div className='min-h-[75vh]'>{children}</div>
       <Footer pages={pages} phones={phones} />
     </>
   );
