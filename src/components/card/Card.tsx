@@ -24,19 +24,19 @@ function Card({
   } = card;
   return (
     <Link href={url}>
-      <section className='bg-secondColor flex flex-col items-center justify-between p-5 rounded-lg  max-w-[260px] min-h-[350px] shadow-md hover:shadow-2xl transition-shadow border-[1px] border-[#009fa9]'>
+      <section className='bg-secondColor flex flex-col items-center justify-between p-5 rounded-lg min-h-[340px] shadow-md hover:shadow-2xl transition-shadow border-[1px] border-cardSecondColor'>
         <div className='flex flex-col items-center gap-3 '>
-          {filename === '' ? (
+          {filename !== '' ? (
             <FontAwesomeIcon
               icon={faHeartPulse}
-              className='text-[60px] text-[#00d6e0] mt-[30px] mb-[20px]'
+              className='text-[60px] text-cardFirstColor mt-[30px] mb-[20px]'
             />
           ) : (
             <img
             onClick={async()=>console.log( await fetch(filename))}
               src={filename === '' ? standartImg : filename}
               alt='icon'
-              className='h-[90px] max-w-[90px]  rounded-full my-[10px]'
+              className='h-[90px] max-w-[90px] rounded-full my-[10px]'
             />
           )}
           <h2 className='text-[15px] text-center max-w-[250px]'>{Name}</h2>
@@ -46,7 +46,7 @@ function Card({
           <p>
             {Days} дн.
           </p>
-          <p className='text-center py-1 px-3 bg-[#009fa9] text-white font-bold rounded-md'>{Price} грн.</p>
+          <p className='text-center py-1 px-3 bg-cardSecondColor text-white font-bold rounded-md'>{Price} грн.</p>
         </div>
       </section>
     </Link>

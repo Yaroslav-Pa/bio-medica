@@ -22,6 +22,8 @@ const config: Config = {
         blackTransperent: '#00000063',
         buttonColor: 'rgb(60, 64, 67)',
         cardImgBorderColor: 'rgb(60, 64, 67)',
+        cardFirstColor:'#00d6e0',
+        cardSecondColor: '#009fa9'
       },
       fontSize: {
         small: '12px',

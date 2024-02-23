@@ -4,6 +4,7 @@ import Card from '../card/Card';
 import { Button } from '../button/Button';
 import { getFromApi } from '../../apiGetter';
 import { useEffect, useState } from 'react';
+import SectionForCards from '../cardsList/CardsList';
 const storyBlockApi =
   'https://api.storyblok.com/v2/cdn/stories/topservices?cv=1708287624&token=FYShrSsmafxPX5CaF9YMKAtt&version=published';
 
@@ -25,9 +26,7 @@ function TopServices() {
       <div className='max-w-[1000px] mx-auto flex flex-col gap-10 px-3 py-10'>
         <h1 className='text-xl font-bold'>ТОП аналізів</h1>
         <article className='flex flex-col justify-center items-center gap-10'>
-          <div className='grid grid-cols-3 gap-10 justify-stretch items-stretch'>
-            {cards && cardListing}
-          </div>
+          <SectionForCards>{cards && cardListing}</SectionForCards>
           {/* // TODO перевірити посилання на сторінку @усіх аналізів*/}
           <Button href='./AllServices'>Продивитись усі</Button>
         </article>
