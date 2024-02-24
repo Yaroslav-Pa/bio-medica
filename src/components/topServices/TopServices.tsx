@@ -27,8 +27,7 @@ function TopServices() {
         <h1 className='text-xl font-bold'>ТОП аналізів</h1>
         <article className='flex flex-col justify-center items-center gap-10'>
           <SectionForCards>{cards && cardListing}</SectionForCards>
-          {/* // TODO перевірити посилання на сторінку @усіх аналізів*/}
-          <Button href='./AllServices'>Продивитись усі</Button>
+          <Button href='/AllServices#top'>Продивитись усі</Button>
         </article>
       </div>
     </section>

@@ -26,7 +26,7 @@ function Card({
     <Link href={url}>
       <section className='bg-secondColor flex flex-col items-center justify-between p-5 rounded-lg min-h-[340px] shadow-md hover:shadow-2xl transition-shadow border-[1px] border-cardSecondColor'>
         <div className='flex flex-col items-center gap-3 '>
-          {filename !== '' ? (
+          {filename === '' ? (
             <FontAwesomeIcon
               icon={faHeartPulse}
               className='text-[60px] text-cardFirstColor mt-[30px] mb-[20px]'
