@@ -38,6 +38,11 @@ const config: Config = {
       },
     },
   },
+  safelist: [
+    {
+      pattern: /grid-cols-(1|2|3|4|5|6)/,
+    },
+  ],
   plugins: [],
 };
 export default config;

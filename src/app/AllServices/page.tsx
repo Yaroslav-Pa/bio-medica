@@ -12,48 +12,64 @@ const storyBlockApi =
 
 function AllServices() {
   const [servicesArr, setServicesArr] = useState({
-    Sections: [{ Objects: [] }],
+    Sections: [{ nameOfSection: '', Objects: [] }],
   });
   const [search, setSearch] = useState('');
-  const [serchedServices, setSerchedServices] = useState([]);
+  const [serchedServices, setSerchedServices]: [
+    serchedServices: [],
+    setSerchedServices: Function
+  ] = useState([]);
   const flattedAllServices: any[] = [];
+
+  const sectionsNameArray: string[] = [];
+
+  const servicesListing = servicesArr.Sections.map(
+    ({ nameOfSection, Objects }) => {
+      sectionsNameArray.push(nameOfSection);
+      return Objects.map((card: any) => {
+        flattedAllServices.push(card);
+        return <Card card={card} key={card._uid} />;
+      });
+    }
+  );
 
   useEffect(() => {
     getFromApi(storyBlockApi, setServicesArr);
   }, []);
 
-  const servicesListing = servicesArr.Sections.map(({ Objects }) =>
-    Objects.map((card: any) => {
-      flattedAllServices.push(card);
-      return <Card card={card} key={card._uid} />;
-    })
-  );
-
   useEffect(() => {
     setSerchedServices(filterSearch(search));
   }, [search]);
+
   const filterSearch = (searchText: string) =>
     flattedAllServices.filter(({ Name }) =>
       Name.toLowerCase().includes(searchText.toLowerCase())
     );
+
   return (
-    <div className='mx-auto flex flex-col max-w-[1400px]'>
-      <NavSectionForAllService value={search} setSearch={setSearch}/>
-      <section className='m-[10%] md:m-20 flex flex-col gap-40'>
-        {search === '' && servicesArr.Sections && (
-          <SectionWithName arr={servicesArr.Sections}>
-            {servicesListing}
-          </SectionWithName>
-        )}
-        {search !== '' && (
-          <SectionForCards gridColumns={4}>
-            {serchedServices.map((card: any) => (
-              <Card card={card} key={card._uid} />
-            ))}
-          </SectionForCards>
-        )}
-      </section>
-    </div>
+    <>
+      <NavSectionForAllService searchValue={search} setSearch={setSearch} array={sectionsNameArray}/>
+      <div className='mx-auto flex flex-col max-w-[1400px]'>
+        <section className='m-[10%] md:m-20 flex flex-col gap-40'>
+          {search === '' && servicesArr.Sections && (
+            <SectionWithName
+              arr={servicesArr.Sections}
+              isRounded={true}
+              isForCard={true}
+            >
+              {servicesListing}
+            </SectionWithName>
+          )}
+          {search !== '' && (
+            <SectionForCards gridColumns={4}>
+              {serchedServices.map((card: any) => (
+                <Card card={card} key={card._uid} />
+              ))}
+            </SectionForCards>
+          )}
+        </section>
+      </div>
+    </>
   );
 }
 
