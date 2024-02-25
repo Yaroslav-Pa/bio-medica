@@ -4,6 +4,7 @@ import QuestionAnswer from '@/components/questionAnswer/QuestionAnswer';
 import SectionWithName from '@/components/sectionWithName/SectionWithName';
 import { useEffect, useState } from 'react';
 import Card from '../../components/card/Card';
+import { useSearchParams } from 'next/navigation';
 import SectionForCards from '@/components/cardsList/CardsList';
 import NavSectionForAllService from '@/components/navSectionForAllService/NavSectionForAllService';
 
@@ -20,6 +21,7 @@ function AllServices() {
     setSerchedServices: Function
   ] = useState([]);
   const flattedAllServices: any[] = [];
+  const searchParams = useSearchParams();
 
   const sectionsNameArray: string[] = [];
 
@@ -35,6 +37,7 @@ function AllServices() {
 
   useEffect(() => {
     getFromApi(storyBlockApi, setServicesArr);
+    setSearch(searchParams.get('search') || '');
   }, []);
 
   useEffect(() => {
@@ -48,9 +51,13 @@ function AllServices() {
 
   return (
     <>
-      <NavSectionForAllService searchValue={search} setSearch={setSearch} array={sectionsNameArray}/>
-      <div className='mx-auto flex flex-col max-w-[1400px]'>
-        <section className='m-[10%] md:m-20 flex flex-col gap-40'>
+      <NavSectionForAllService
+        searchValue={search}
+        setSearch={setSearch}
+        array={sectionsNameArray}
+      />
+      <div className="mx-auto flex flex-col max-w-[1400px]">
+        <section className="m-[10%] md:m-20 flex flex-col gap-40">
           {search === '' && servicesArr.Sections && (
             <SectionWithName
               arr={servicesArr.Sections}

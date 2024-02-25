@@ -22,16 +22,16 @@ function Faqs() {
   );
 
   return (
-    <div className='mx-auto flex flex-col max-w-[1200px]'>
+    <div className="mx-auto flex flex-col max-w-[1200px]">
       <section
-        className='m-[10%] md:m-20 flex flex-col gap-20'
+        className="m-[10%] md:m-20 flex flex-col gap-20"
         onClick={() => {
           console.log(sectionsNameArray);
         }}
       >
         {infoArr.Sections && (
           <SectionWithName arr={infoArr.Sections} names={setSectionsNameArray}>
-            <div className='ml-5 flex flex-col gap-14'>{questionListing}</div>
+            <div className="ml-5 flex flex-col gap-14">{questionListing}</div>
           </SectionWithName>
         )}
       </section>
