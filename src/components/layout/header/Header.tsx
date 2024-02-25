@@ -7,7 +7,7 @@ import { Change } from '@/variablesToChange';
 
 function Header({ pages, phones }: { pages: page[]; phones: string[] }) {
   return (
-    <header className='radial-gradient top-0 left-0 right-0 drop-shadow-xl w-full bg-firstColor sticky mx-[auto] flex flex-row justify-between items-center z-10'>
+    <header className='radial-gradient top-0 left-0 right-0 drop-shadow-xl w-full bg-firstColor mx-[auto] flex flex-row justify-between items-center z-10'>
       <div className={'flex gap-2 flex-row'}>
         <Link href='./' className='icon-gradient pl-8 pr-6 py-[4px]'>
           <img

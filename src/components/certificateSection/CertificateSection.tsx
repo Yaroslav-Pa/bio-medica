@@ -17,7 +17,7 @@ function CertificateSection() {
     <section className=' bg-firstColor my-10'>
       <div className='max-w-containerWidth mx-auto flex flex-col gap-4 px-3 py-10'>
         <div className='flex items-center gap-5'>
-          <h1 className='text-xl'>Ліцензії та сертифікати</h1>
+          <h1 className='text-xl font-bold'>Ліцензії та сертифікати</h1>
           <Button href='./Services'>Всі</Button>
         </div>
         <article className='grid grid-cols-2 md:grid-cols-4 gap-5 justify-center items-center'>

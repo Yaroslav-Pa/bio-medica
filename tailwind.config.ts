@@ -10,7 +10,7 @@ const config: Config = {
     extend: {
       backgroundImage: {},
       colors: {
-        firstColor: '#62f8f7',
+        firstColor: '#befcff',
         secondColor: 'white',
         thirdColor: '#affbfb',
         orangeLight: '#ffc895',
@@ -22,6 +22,8 @@ const config: Config = {
         blackTransperent: '#00000063',
         buttonColor: 'rgb(60, 64, 67)',
         cardImgBorderColor: 'rgb(60, 64, 67)',
+        cardFirstColor:'#00d6e0',
+        cardSecondColor: '#009fa9'
       },
       fontSize: {
         small: '12px',
@@ -36,6 +38,11 @@ const config: Config = {
       },
     },
   },
+  safelist: [
+    {
+      pattern: /grid-cols-(1|2|3|4|5|6)/,
+    },
+  ],
   plugins: [],
 };
 export default config;
