@@ -42,7 +42,7 @@ function AllServices() {
 
   useEffect(() => {
     setSerchedServices(filterSearch(search));
-  }, [search]);
+  }, [search, servicesArr]);
 
   const filterSearch = (searchText: string) =>
     flattedAllServices.filter(({ Name }) =>
@@ -50,7 +50,7 @@ function AllServices() {
     );
 
   return (
-    <>
+    <div>
       <NavSectionForAllService
         searchValue={search}
         setSearch={setSearch}
@@ -76,7 +76,7 @@ function AllServices() {
           )}
         </section>
       </div>
-    </>
+    </div>
   );
 }
 
