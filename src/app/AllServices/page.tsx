@@ -6,6 +6,7 @@ import Card from '../../components/card/Card';
 import { useSearchParams } from 'next/navigation';
 import SectionForCards from '@/components/cardsList/CardsList';
 import NavSectionForAllService from '@/components/navSectionForAllService/NavSectionForAllService';
+import ToTopButton from '@/components/toTopButton/ToTopButton';
 
 const storyBlockApi =
   'https://api.storyblok.com/v2/cdn/stories/allservices?cv=1708287624&token=FYShrSsmafxPX5CaF9YMKAtt&version=published';
@@ -21,8 +22,8 @@ function AllServices() {
   ] = useState([]);
   const flattedAllServices: any[] = [];
   const searchParams = useSearchParams();
-
   const sectionsNameArray: string[] = [];
+  const  [currentHeight, setCurrentHeight] = useState(0);
 
   const servicesListing = servicesArr.Sections.map(
     ({ nameOfSection, Objects }) => {
@@ -48,15 +49,22 @@ function AllServices() {
       Name.toLowerCase().includes(searchText.toLowerCase())
     );
 
+  useEffect(() => {
+    document.addEventListener('scroll', () => {
+      setCurrentHeight(document.documentElement.scrollTop);
+    });
+  }, []);
+
   return (
     <div>
+      <ToTopButton style={currentHeight > 500 ? ' opacity-100 visible': ' opacity-0 invisible'}/>
       <NavSectionForAllService
         searchValue={search}
         setSearch={setSearch}
         array={sectionsNameArray}
       />
-      <div className="mx-auto flex flex-col max-w-[1400px]">
-        <section className="m-[10%] md:m-20 flex flex-col gap-40">
+      <div className='mx-auto flex flex-col max-w-[1400px]'>
+        <section className='m-[10%] md:m-20 flex flex-col gap-40'>
           {search === '' && servicesArr.Sections && (
             <SectionWithName
               arr={servicesArr.Sections}

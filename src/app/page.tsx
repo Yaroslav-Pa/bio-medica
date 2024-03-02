@@ -7,6 +7,7 @@ import CertificateSection from '@/components/certificateSection/CertificateSecti
 import MapSection from '@/components/mapSection/MapSection';
 
 export default function Home() {
+
   return (
     <>
       <ImageSlider />
