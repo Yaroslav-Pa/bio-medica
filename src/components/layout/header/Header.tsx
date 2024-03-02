@@ -1,14 +1,20 @@
 import Link from 'next/link';
 import { page } from '@/variablesToChange';
+import { Squash as Hamburger } from 'hamburger-react';
 import PhoneList from '@/components/phonesList/PhoneList';
 import './styles.css';
 import { Button } from '@/components/button/Button';
 import SocialsIsonsList from '@/components/socialsIcons/SocialsiconsList';
 import PagesListing from '@/components/pagesListing/PagesListing';
+import { useState } from 'react';
+import SimpleNavContacts from '../simpleNavContacts/SimpleNavContacts';
+import { Change } from '@/variablesToChange/index';
+const { phones } = Change;
 
-function Header({ phones }: { phones: string[] }) {
+function Header() {
+  const [isOpenMenu, setIsOpenMenu] = useState(false);
   return (
-    <header className='radial-gradient top-0 left-0 right-0 drop-shadow-xl w-full bg-firstColor mx-[auto] flex flex-row justify-between items-center z-10'>
+    <header className='radial-gradient top-0 left-0 right-0 drop-shadow-xl w-full bg-firstColor mx-[auto] flex flex-row justify-between items-center z-10 relative'>
       <div className={'flex gap-1 flex-row'}>
         <Link
           href='./'
@@ -29,11 +35,30 @@ function Header({ phones }: { phones: string[] }) {
           Отримати результати
         </Button>
         <div className='hidden xl:grid grid-cols-2 gap-2 text-large flex-wrap'>
-          {<SocialsIsonsList />}
+          <SocialsIsonsList />
         </div>
         <div className='hidden  xl:block font-bold text-small  md:text-base h-[100%]'>
           <PhoneList phones={phones} />
         </div>
+      </div>
+      <div className='pr-2 mdp:hidden'>
+        <Hamburger
+          size={25}
+          label='Show menu'
+          onToggle={(toggled) => {
+            toggled ? setIsOpenMenu(true) : setIsOpenMenu(false);
+          }}
+        />
+        <SimpleNavContacts
+          moreStyling={
+            ' absolute top-full left-0 bg-white items-center' +
+            (isOpenMenu ? ' opacity-100 visible' : ' opacity-0 invisible')
+          }
+        >
+          <Button href='http://results.bio-medica.com.ua/' isBlack={true}>
+            Отримати результати
+          </Button>
+        </SimpleNavContacts>
       </div>
     </header>
   );
