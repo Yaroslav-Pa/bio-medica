@@ -6,12 +6,6 @@ import {
   faVialCircleCheck,
   faTrophy,
 } from '@fortawesome/free-solid-svg-icons';
-import {
-  faTwitter,
-  faInstagram,
-  faTelegram,
-} from '@fortawesome/free-brands-svg-icons';
-import YouTubeVideo from './youtubeVideo/YouTubeVideo';
 
 const blocs = [
   {
@@ -45,9 +39,8 @@ function AboutUs() {
     <div className="flex flex-col justify-center items-center my-10">
       <section className="max-w-containerWidth flex flex-col gap-10 p-8">
         <article className="flex flex-row justify-center items-center gap-24">
-          
           <div className="flex flex-col gap-5 max-w-[500px]">
-            <h1 className='text-xl font-bold'>Про нас</h1>
+            <h1 className="text-xl font-bold">Про нас</h1>
             <h2 className="text-medium">Медична лабораторія</h2>
             <p className="text-base font-light">
               Ми спеціалізуємося на проведенні лабораторних досліджень
@@ -60,12 +53,12 @@ function AboutUs() {
               зрозуміти причини зміни вашого самопочуття. З нами діагностика –
               це швидко, вигідно та надійно.
             </p>
-            <a href="" className="text-small font-light underline">
-              Читати
-            </a>
+            {/* <a href='' className="text-small font-light underline">
+                Читати
+              </a> */}
           </div>
           <div className="grid grid-cols-2 grid-rows-2  gap-1 min-w-fit items-center">
-            {blocs.map(({text, number, img, styleRounded}) => (
+            {blocs.map(({ text, number, img, styleRounded }) => (
               <InfoBlock
                 key={text}
                 text={text}
