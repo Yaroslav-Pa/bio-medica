@@ -4,7 +4,7 @@ import PhoneList from '@/components/phonesList/PhoneList';
 import SocialsIsonsList from '@/components/socialsIcons/SocialsiconsList';
 import PagesListing from '@/components/pagesListing/PagesListing';
 
-function Footer({ pages, phones }: { pages: page[]; phones: string[] }) {
+function Footer({phones }: { phones: string[] }) {
   return (
     <footer className="flex flex-row justify-evenly items-center bg-firstColor py-10">
       <nav className={'flex  flex-col gap-1'}>
