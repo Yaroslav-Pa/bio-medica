@@ -14,6 +14,7 @@ const config: Config = {
         secondColor: 'white',
         thirdColor: '#affbfb',
         orangeLight: '#ffc895',
+        orangeMax: '#ff7a1e',
         orangeDark: '#ffaf66',
         textColor: 'rgb(60, 64, 67)',
         textWhiteColor: 'rgb(240, 240, 240)',

@@ -1,11 +1,22 @@
 import Link from 'next/link';
 import React from 'react';
 
-export const Button = ({ href, children }: { href: string; children: any }) => {
+export const Button = ({
+  href,
+  children,
+  isBlack = true,
+}: {
+  href: string;
+  children: any;
+  isBlack?: boolean;
+}) => {
   return (
     <Link
       href={href}
-      className="p-2 hover:bg-orangeLight bg-secondColor border-2 border-solid border-orangeDark rounded-lg transition-colors duration-300 text-textColor font-bold"
+      className={
+        'p-2 border-2 border-solid  rounded-lg transition-colors duration-300  font-bold' +
+        (isBlack ? ' text-cardSecondColor bg-transparent border-cardSecondColor hover:bg-cardSecondColor hover:text-white' : ' bg-white border-white  hover:bg-white hover:text-orangeMax')
+      }
     >
       {children}
     </Link>

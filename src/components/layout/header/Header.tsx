@@ -4,6 +4,7 @@ import PhoneList from '@/components/phonesList/PhoneList';
 import './styles.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Change } from '@/variablesToChange';
+import { Button } from '@/components/button/Button';
 
 function Header({ pages, phones }: { pages: page[]; phones: string[] }) {
   return (
@@ -28,7 +29,8 @@ function Header({ pages, phones }: { pages: page[]; phones: string[] }) {
           ))}
         </div>
       </div>
-      <div className='flex gap-4 pr-8 text-buttonDarktColor'>
+      <div className='flex gap-4 pr-8 text-buttonDarktColor items-center'>
+        <Button href='http://results.bio-medica.com.ua/' isBlack={false}>Отримати результати</Button>
         <div className='grid grid-cols-2 gap-2 text-large flex-wrap'>
           {Change.socials.map(({ url, icon, name }) => (
             <Link href={url} title={name} key={url} className='h-[20px]'>
