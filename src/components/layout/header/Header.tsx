@@ -1,48 +1,38 @@
 import Link from 'next/link';
-import { page } from '../Layout';
+import { page } from '@/variablesToChange';
 import PhoneList from '@/components/phonesList/PhoneList';
 import './styles.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Change } from '@/variablesToChange';
 import { Button } from '@/components/button/Button';
+import SocialsIsonsList from '@/components/socialsIcons/SocialsiconsList';
+import PagesListing from '@/components/pagesListing/PagesListing';
 
 function Header({ pages, phones }: { pages: page[]; phones: string[] }) {
   return (
     <header className='radial-gradient top-0 left-0 right-0 drop-shadow-xl w-full bg-firstColor mx-[auto] flex flex-row justify-between items-center z-10'>
-      <div className={'flex gap-2 flex-row'}>
-        <Link href='./' className='icon-gradient pl-8 pr-6 py-[4px]'>
+      <div className={'flex gap-1 flex-row'}>
+        <Link
+          href='./'
+          className='icon-gradient pl-4 md:pl-8 pr-4 md:pr-6 py-[4px]'
+        >
           <img
             src='./logo.png'
             alt='logo'
-            className='max-h-[45px] sm:max-h-[60px]'
+            className='max-h-[40px] sm:max-h-[60px]'
           />
         </Link>
-        <div className={'flex flex-row items-center'}>
-          {pages.map(({ url, pageName }) => (
-            <Link
-              href={url}
-              key={url}
-              className='p-3 hover:cursor-pointer transition-colors duration-200 text-center hover:bg-secondColor rounded-md'
-            >
-              {pageName}
-            </Link>
-          ))}
+        <div className={'hidden xl:flex flex-row items-center gap-2'}>
+          <PagesListing />
         </div>
       </div>
-      <div className='flex gap-4 pr-8 text-buttonDarktColor items-center'>
-        <Button href='http://results.bio-medica.com.ua/' isBlack={false}>Отримати результати</Button>
+      <div className='hidden xl:flex gap-5 pr-8 text-buttonDarktColor items-center'>
+        <Button href='http://results.bio-medica.com.ua/' isBlack={false}>
+          Отримати результати
+        </Button>
         <div className='grid grid-cols-2 gap-2 text-large flex-wrap'>
-          {Change.socials.map(({ url, icon, name }) => (
-            <Link href={url} title={name} key={url} className='h-[20px]'>
-              <FontAwesomeIcon
-                icon={icon}
-                className='hover:text-hoverColor cursor-pointer pb-1'
-              />
-            </Link>
-          ))}
+          {<SocialsIsonsList />}
         </div>
 
-        <div className='font-bold text-small md:text-base h-[100%]'>
+        <div className='font-bold text-small  md:text-base h-[100%]'>
           <PhoneList phones={phones} />
         </div>
       </div>

@@ -8,12 +8,12 @@ import MapSection from '@/components/mapSection/MapSection';
 
 export default function Home() {
   return (
-    <main>
+    <>
       <ImageSlider />
       <TopServices />
       <AboutUs />
       <CertificateSection />
       <MapSection />
-    </main>
+    </>
   );
 }

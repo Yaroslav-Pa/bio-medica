@@ -31,7 +31,10 @@ export type Social = {
   icon: IconDefinition;
 };
 
+export type page = { url: string; pageName: string };
+
 type MyData = {
+  pages: page[];
   imagesForSlider: ImageForSlider[];
   phones: string[];
   map: Record<string, MapLocation[]>;
@@ -39,6 +42,20 @@ type MyData = {
 };
 
 export const Change: MyData = {
+  pages: [
+    {
+      url: '/',
+      pageName: 'Головна',
+    },
+    {
+      url: '/AllServices',
+      pageName: 'Перелік аналізів',
+    },
+    {
+      url: './FAQ',
+      pageName: 'Часті запитання',
+    },
+  ],
   imagesForSlider: [
     {
       id: 1,

@@ -2,31 +2,15 @@
 import Footer from './footer/Footer';
 import Header from './header/Header';
 import { Change } from '../../variablesToChange/index';
-export type page = { url: string; pageName: string };
-const { phones } = Change;
-
-const pages: page[] = [
-  {
-    url: '/',
-    pageName: 'Головна',
-  },
-  {
-    url: '/AllServices',
-    pageName: 'Перелік аналізів',
-  },
-  {
-    url: './FAQ',
-    pageName: 'Часті запитання',
-  },
-];
+const { phones, pages } = Change;
 
 function Layout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <>
+    <main className='flex flex-col min-h-screen'>
       <Header pages={pages} phones={phones} />
-      <div className='min-h-[75vh] transition-all duration-300 '>{children}</div>
+      <div className='transition-all duration-300 flex-1'>{children}</div>
       <Footer pages={pages} phones={phones} />
-    </>
+    </main>
   );
 }
 
