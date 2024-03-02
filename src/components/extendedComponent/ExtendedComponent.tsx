@@ -17,9 +17,9 @@ const ExtendedComponent: React.FC<QuestionProps> = ({ question, answer }) => {
   return (
     <div className="w-full mx-auto">
       <div
-        className={` p-4 flex justify-between items-center cursor-pointer rounded-lg ${
+        className={` p-4 flex justify-between items-center cursor-pointer rounded-lg border-[1px] border-cardSecondColor transition-all ${
           isExpanded ? 'rounded-b-none' : ''
-        } border-[1px] border-cardSecondColor  `}
+        }`}
         onClick={toggleExpansion}
       >
         <div className="font-bold">{question}</div>
@@ -28,11 +28,14 @@ const ExtendedComponent: React.FC<QuestionProps> = ({ question, answer }) => {
           className="text-gray-600"
         />
       </div>
-      {isExpanded && (
-        <div className="border-[1px] border-firstColor border-t-0 p-4 overflow-hidden transition-all duration-500 transform-gpu rounded-b-lg">
-          <div className="font-normal">{answer}</div>
-        </div>
-      )}
+
+      <div
+        className={`border-[1px] border-firstColor border-t-0 px-4 overflow-hidden transition-all duration-500 transform-gpu rounded-b-lg ${
+          isExpanded ? 'h-auto p-4' : 'h-0 p-0 border-none'
+        }`}
+      >
+        <div className="font-normal">{answer}</div>
+      </div>
     </div>
   );
 };
