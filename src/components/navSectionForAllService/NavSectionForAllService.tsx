@@ -34,7 +34,9 @@ function NavSectionForAllService({
           (searchValue != '' ? ' opacity-0 invisible' : ' opacity-100 visible')
         }
       >
-        <h2 className='border-b-2 border-b-cardSecondColor 3xl:border-b-stone-300'>Доступні аналізів по розділам</h2>
+        <h2 className='border-b-2 border-b-cardSecondColor 3xl:border-b-stone-300'>
+          Доступні аналізів по розділам
+        </h2>
         <div className='flex flex-col gap-3'>
           {array &&
             array.map((text) => (
@@ -59,7 +61,10 @@ function NavSectionForAllService({
       </section>
       <section className='3xl:hidden'>
         <div
-          className={'fixed top-24 h-fit max-w-[25px] sm:max-w-[40px] bg-transparent rounded-r-md [writing-mode:vertical-rl] py-2 sm:px-2 text-center border-l-0 border-2 border-cardSecondColor hover:cursor-pointer font-semibold z-0 transition-opacity duration-200' + (isOpen? ' opacity-0 invisible':' opacity-100 visible')}
+          className={
+            'fixed top-24 h-fit max-w-[25px] sm:max-w-[40px] bg-transparent rounded-r-md [writing-mode:vertical-rl] py-2 sm:px-2 text-center border-l-0 border-2 border-cardSecondColor hover:cursor-pointer font-semibold z-0 transition-opacity duration-200' +
+            (isOpen ? ' opacity-0 invisible' : ' opacity-100 visible')
+          }
           onClick={() => {
             isOpen ? setIsOpen(false) : setIsOpen(true);
           }}
@@ -68,13 +73,20 @@ function NavSectionForAllService({
         </div>
         <div
           className={
-            'fixed top-0 bottom-0 w-screen md:left-0 md:w-fit bg-white bg-opacity-80 md:bg-opacity-100 z-10 transition-all duration-300 flex flex-col justify-start items-center gap-6 pt-10 ssm:pl-14 ssm:pr-10 ssm:py-10' + (isOpen ? ' opacity-100 visible' : ' opacity-0 invisible')
+            'fixed top-0 bottom-0 w-screen md:left-0 md:w-fit bg-white bg-opacity-80 md:bg-opacity-100 z-10 transition-all duration-300 flex flex-col justify-start items-center gap-6 pt-10 ssm:pl-14 ssm:pr-10 ssm:py-10' +
+            (isOpen ? ' opacity-100 visible' : ' opacity-0 invisible')
           }
         >
-          <div className='fixed top-3 left-5 text-[24px] md:text-[28px]' onClick={()=>{setIsOpen(false)}}><FontAwesomeIcon icon={faXmark} /></div>
+          <div
+            className='fixed top-3 left-5 text-[24px] md:text-[28px]'
+            onClick={() => {
+              setIsOpen(false);
+            }}
+          >
+            <FontAwesomeIcon icon={faXmark} />
+          </div>
           {searchAndSectionNameListing}
         </div>
-        
       </section>
     </>
   );

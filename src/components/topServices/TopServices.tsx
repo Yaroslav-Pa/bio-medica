@@ -34,7 +34,7 @@ function TopServices() {
   return (
     <section className=" bg-firstColor my-10">
       <div className="max-w-[1000px] mx-auto flex flex-col gap-10 px-3 py-10">
-        <div className="flex justify-between">
+        <div className="flex flex-col sm:flex-row justify-between gap-3 items-center">
           <h1 className="text-xl font-bold">ТОП аналізів</h1>
           <div className="relative">
             <input

@@ -28,7 +28,7 @@ function ImageSlider() {
   return (
     <>
       {imagesForSlider.Photos && (
-        <section className='my-10 max-w-[1200px] mx-auto relative'>
+        <section className='mb-10 xl:mt-10 max-w-[1200px] mx-auto relative'>
           <Slider
             {...settings}
             ref={(slider: any) => (customSlider.current = slider)}
@@ -37,7 +37,7 @@ function ImageSlider() {
               ({ id, filename }: { id: number; filename: string }) => (
                 <div key={id}>
                   <div
-                    className='rounded-md relative bg-cover bg-clip-padding bg-center min-h-[670px] flex flex-col bg-no-repeat justify-center items-start p-10 gap-8 text-textWhiteColor'
+                    className='rounded-md relative bg-contain xl:bg-cover bg-clip-padding bg-center min-h-[65vw] ssm:min-h-[60vw] xl:min-h-[670px] flex flex-col bg-no-repeat justify-center items-start xl:py-10 text-textWhiteColor'
                     style={{ backgroundImage: `url(${filename})` }}
                   >
                   </div>
