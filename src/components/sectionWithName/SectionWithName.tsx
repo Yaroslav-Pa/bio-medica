@@ -15,13 +15,17 @@ function SectionWithName({
   return arr.map(
     ({ nameOfSection, _uid }: { nameOfSection: string; _uid: string }) => {
       return (
-        <div className='gap-10 flex flex-col' key={`${_uid}+${nameOfSection}`} id={nameOfSection}>
+        <div
+          className="gap-10 flex flex-col"
+          key={`${_uid}+${nameOfSection}`}
+          id={nameOfSection}
+        >
           <h1
             className={
               'pl-3 text-xl p-2 font-bold ' +
               (isRounded
                 ? ' radial-gradient text-white rounded-lg'
-                : ' border-b-2')
+                : ' border-b-2 border-firstColor')
             }
           >
             {nameOfSection}

@@ -1,6 +1,6 @@
 'use client';
 import { getFromApi } from '@/apiGetter';
-import QuestionAnswer from '@/components/questionAnswer/QuestionAnswer';
+import ExtendedComponent from '@/components/extendedComponent/ExtendedComponent';
 import SectionWithName from '@/components/sectionWithName/SectionWithName';
 import { useEffect, useState } from 'react';
 
@@ -17,7 +17,7 @@ function Faqs() {
 
   const questionListing = infoArr.Sections.map(({ Objects }) =>
     Objects.map(({ Question, Answer }) => (
-      <QuestionAnswer question={Question} answer={Answer} />
+      <ExtendedComponent question={Question} answer={Answer} />
     ))
   );
 
@@ -31,7 +31,7 @@ function Faqs() {
       >
         {infoArr.Sections && (
           <SectionWithName arr={infoArr.Sections} names={setSectionsNameArray}>
-            <div className="ml-5 flex flex-col gap-14">{questionListing}</div>
+            <div className="ml-5 flex flex-col gap-4">{questionListing}</div>
           </SectionWithName>
         )}
       </section>
