@@ -1,6 +1,5 @@
 'use client';
 import { getFromApi } from '@/apiGetter';
-import QuestionAnswer from '@/components/questionAnswer/QuestionAnswer';
 import SectionWithName from '@/components/sectionWithName/SectionWithName';
 import { useEffect, useState } from 'react';
 import Card from '../../components/card/Card';

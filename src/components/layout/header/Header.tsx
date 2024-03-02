@@ -1,14 +1,13 @@
-import Link from 'next/link';
-import { page } from '@/variablesToChange';
-import { Squash as Hamburger } from 'hamburger-react';
-import PhoneList from '@/components/phonesList/PhoneList';
-import './styles.css';
-import { Button } from '@/components/button/Button';
 import SocialsIsonsList from '@/components/socialsIcons/SocialsiconsList';
 import PagesListing from '@/components/pagesListing/PagesListing';
-import { useState } from 'react';
 import SimpleNavContacts from '../simpleNavContacts/SimpleNavContacts';
+import PhoneList from '@/components/phonesList/PhoneList';
+import Link from 'next/link';
+import { Squash as Hamburger } from 'hamburger-react';
+import { Button } from '@/components/button/Button';
 import { Change } from '@/variablesToChange/index';
+import { useState } from 'react';
+import './styles.css';
 const { phones } = Change;
 
 function Header() {

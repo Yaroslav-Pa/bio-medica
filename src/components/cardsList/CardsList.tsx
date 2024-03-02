@@ -8,7 +8,7 @@ function SectionForCards({
   return (
     <section
       className={
-        'grid gap-10 justify-stretch items-stretch ' + ` grid-cols-${gridColumns}`
+        'grid gap-10 justify-stretch items-stretch grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 ' + (gridColumns>3?'xl:grid-cols-4':'')
       }
     >
       {children}

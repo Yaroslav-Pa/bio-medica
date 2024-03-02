@@ -14,7 +14,7 @@ function SimpleNavContacts({
   return (
     <section
       className={
-        'flex flex-col ssm:flex-row ssm:justify-evenly gap-10 transition-opacity duration-300 w-screen min-h-fit py-5 px-2 ' +
+        'flex flex-col ssm:flex-row ssm:justify-evenly gap-10 transition-opacity duration-300 w-full min-h-fit py-5 px-2 ' +
         moreStyling
       }
     >
