@@ -1,12 +1,14 @@
 'use client';
 import { getFromApi } from '@/apiGetter';
-import SectionWithName from '@/components/sectionWithName/SectionWithName';
 import { useEffect, useState } from 'react';
-import Card from '../../components/card/Card';
 import { useSearchParams } from 'next/navigation';
-import SectionForCards from '@/components/cardsList/CardsList';
+import { CardType } from '@/components/card/Card';
+
 import NavSectionForAllService from '@/components/navSectionForAllService/NavSectionForAllService';
+import SectionWithName from '@/components/sectionWithName/SectionWithName';
 import ToTopButton from '@/components/toTopButton/ToTopButton';
+import SectionForCards from '@/components/cardsList/CardsList';
+import Card from '@/components/card/Card';
 
 const storyBlockApi =
   'https://api.storyblok.com/v2/cdn/stories/allservices?cv=1708287624&token=FYShrSsmafxPX5CaF9YMKAtt&version=published';
@@ -15,25 +17,21 @@ function AllServices() {
   const [servicesArr, setServicesArr] = useState({
     Sections: [{ nameOfSection: '', Objects: [] }],
   });
-  const [search, setSearch] = useState('');
   const [serchedServices, setSerchedServices]: [
     serchedServices: [],
     setSerchedServices: Function
   ] = useState([]);
-  const flattedAllServices: any[] = [];
+  const [currentHeight, setCurrentHeight] = useState(0);
+  const [search, setSearch] = useState('');
   const searchParams = useSearchParams();
-  const sectionsNameArray: string[] = [];
-  const  [currentHeight, setCurrentHeight] = useState(0);
-
-  const servicesListing = servicesArr.Sections.map(
-    ({ nameOfSection, Objects }) => {
-      sectionsNameArray.push(nameOfSection);
-      return Objects.map((card: any) => {
-        flattedAllServices.push(card);
-        return <Card card={card} key={card._uid} />;
-      });
-    }
-  );
+  const [sectionsNameArray, setSectionsNameArray]: [
+    sectionsNameArray: string[],
+    setSectionsNameArray: Function
+  ] = useState([]);
+  const [flattedAllServices, setFlattedAllServices]: [
+    flattedAllServices: CardType[],
+    setFlattedAllServices: Function
+  ] = useState([]);
 
   useEffect(() => {
     getFromApi(storyBlockApi, setServicesArr);
@@ -41,12 +39,30 @@ function AllServices() {
   }, []);
 
   useEffect(() => {
+    setSectionsNameArray([]);
+    setFlattedAllServices([]);
+    servicesArr.Sections.forEach(({ nameOfSection, Objects }) => {
+      setSectionsNameArray((sectionsNameArray: string[]) => [
+        ...sectionsNameArray,
+        nameOfSection,
+      ]);
+      Objects.forEach((card: any) => {
+        console.log('1');
+        setFlattedAllServices((flattedAllServices: CardType[]) => [
+          ...flattedAllServices,
+          card,
+        ]);
+      });
+    });
+  }, [servicesArr]);
+
+  useEffect(() => {
     setSerchedServices(filterSearch(search));
   }, [search, servicesArr]);
 
   const filterSearch = (searchText: string) =>
-    flattedAllServices.filter(({ Name }) =>
-      Name.toLowerCase().includes(searchText.toLowerCase())
+    flattedAllServices?.filter(({ Name }) =>
+      Name?.toLowerCase().includes(searchText.toLowerCase())
     );
 
   useEffect(() => {
@@ -57,7 +73,11 @@ function AllServices() {
 
   return (
     <div>
-      <ToTopButton style={currentHeight > 500 ? ' opacity-100 visible': ' opacity-0 invisible'}/>
+      <ToTopButton
+        style={
+          currentHeight > 500 ? ' opacity-100 visible' : ' opacity-0 invisible'
+        }
+      />
       <NavSectionForAllService
         searchValue={search}
         setSearch={setSearch}
@@ -70,9 +90,7 @@ function AllServices() {
               arr={servicesArr.Sections}
               isRounded={true}
               isForCard={true}
-            >
-              {servicesListing}
-            </SectionWithName>
+            />
           )}
           {search !== '' && (
             <SectionForCards gridColumns={4}>

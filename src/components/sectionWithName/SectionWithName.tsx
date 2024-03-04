@@ -1,22 +1,30 @@
+import Card from '../card/Card';
 import SectionForCards from '../cardsList/CardsList';
 import '../layout/header/styles.css';
+import ExtendedComponent from '@/components/extendedComponent/ExtendedComponent';
 
 function SectionWithName({
   arr,
-  children,
   isRounded = false,
   isForCard = false,
 }: {
   arr: any[];
-  children: React.ReactNode;
   isRounded?: boolean;
   isForCard?: boolean;
 }) {
   return arr.map(
-    ({ nameOfSection, _uid }: { nameOfSection: string; _uid: string }) => {
+    ({
+      nameOfSection,
+      Objects,
+      _uid,
+    }: {
+      nameOfSection: string;
+      Objects: [];
+      _uid: string;
+    }) => {
       return (
         <div
-          className="gap-10 flex flex-col"
+          className='gap-10 flex flex-col'
           key={`${_uid}+${nameOfSection}`}
           id={nameOfSection}
         >
@@ -31,9 +39,17 @@ function SectionWithName({
             {nameOfSection}
           </h1>
           {isForCard ? (
-            <SectionForCards gridColumns={4}>{children}</SectionForCards>
+            <SectionForCards gridColumns={4}>
+              {Objects.map((card: any) => {
+                return <Card card={card} key={card._uid} />;
+              })}
+            </SectionForCards>
           ) : (
-            children
+            <div className='ml-5 flex flex-col gap-4'>
+              {Objects.map(({ Question, Answer }) => (
+                <ExtendedComponent question={Question} answer={Answer} />
+              ))}
+            </div>
           )}
         </div>
       );

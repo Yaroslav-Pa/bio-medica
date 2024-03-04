@@ -8,5 +8,5 @@ export const getFromApi = (url: string, setter: Function) => {
     })
     .catch(({ message }: { message: string }) => {
       console.log(message);
-    });
+    })
 };

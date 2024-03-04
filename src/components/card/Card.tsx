@@ -4,16 +4,19 @@ const standartImg =
   'https://erudyt.org/wp-content/uploads/2018/08/pexels-photo.jpg';
 import { faHeartPulse } from '@fortawesome/free-solid-svg-icons';
 
-function Card({
-  card,
-}: {
-  card: {
+export type CardType = {
+    _uid: string;
     Image: { filename: string };
     Name: string;
     Days: string;
     Price: string;
     url?: string;
-  };
+};
+
+function Card({
+  card,
+}: {
+  card: CardType;
 }) {
   const {
     Image: { filename },
