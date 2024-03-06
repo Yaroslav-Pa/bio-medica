@@ -84,7 +84,7 @@ function AllServices() {
         array={sectionsNameArray}
       />
       <div className='mx-auto flex flex-col max-w-[1400px]'>
-        <section className='m-[10%] md:m-20 flex flex-col gap-40'>
+        <section className='m-[10%] md:m-20 flex flex-col gap-y-32'>
           {search === '' && servicesArr.Sections && (
             <SectionWithName
               arr={servicesArr.Sections}

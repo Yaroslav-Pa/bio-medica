@@ -73,12 +73,12 @@ function NavSectionForAllService({
         </div>
         <div
           className={
-            'fixed top-0 bottom-0 w-screen md:left-0 md:w-fit bg-white bg-opacity-80 md:bg-opacity-100 z-10 transition-all duration-300 flex flex-col justify-start items-center gap-6 pt-10 ssm:pl-14 ssm:pr-10 ssm:py-10' +
+            'fixed top-0 bottom-0 w-screen md:left-0 md:w-fit bg-white bg-opacity-80 md:bg-opacity-100 z-10 transition-all duration-500 flex flex-col justify-start items-center gap-6 pt-10 sm:pl-14 ssm:px-10 ssm:py-10' +
             (isOpen ? ' opacity-100 visible' : ' opacity-0 invisible')
           }
         >
           <div
-            className='fixed top-3 left-5 text-[24px] md:text-[28px]'
+            className='fixed top-3 left-5 text-[24px] md:text-[28px] hover:cursor-pointer'
             onClick={() => {
               setIsOpen(false);
             }}
