@@ -16,7 +16,7 @@ function NavSectionForAllService({
 
   const searchAndSectionNameListing = (
     <>
-      <div>
+      <div className={!isOpen ? ' opacity-0 invisible' : ' opacity-100 visible'}>
         <h2>Пошук аналізів</h2>
         <input
           className='border-2 rounded-lg px-3 py-1 border-cardSecondColor 3xl:border-stone-300'
@@ -30,8 +30,8 @@ function NavSectionForAllService({
       </div>
       <div
         className={
-          'flex flex-col gap-2 transition-opacity ' +
-          (searchValue != '' ? ' opacity-0 invisible' : ' opacity-100 visible')
+          'flex flex-col gap-2 transition-opacity' +
+          (searchValue != '' || !isOpen ? ' opacity-0 invisible' : ' opacity-100 visible')
         }
       >
         <h2 className='border-b-2 border-b-cardSecondColor 3xl:border-b-stone-300'>

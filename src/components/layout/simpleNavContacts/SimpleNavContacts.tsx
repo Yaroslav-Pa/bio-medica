@@ -7,9 +7,11 @@ const { phones } = Change;
 function SimpleNavContacts({
   moreStyling = '',
   children = null,
+  onClick,
 }: {
   moreStyling?: string;
   children?: any;
+  onClick?:Function
 }) {
   return (
     <section
@@ -19,7 +21,7 @@ function SimpleNavContacts({
       }
     >
       <div className='flex flex-col items-center gap-2'>
-        <PagesListing isSimple={true} />
+        <PagesListing isSimple={true} onClick={onClick}/>
       </div>
       <div className='flex flex-col gap-5 items-center'>
         <div className='flex flex-row gap-4 text-large flex-wrap'>

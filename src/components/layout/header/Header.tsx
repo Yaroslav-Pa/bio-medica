@@ -12,6 +12,10 @@ const { phones } = Change;
 
 function Header() {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
+  const toggleMenu = () => {
+    console.log(isOpenMenu);
+    isOpenMenu ? setIsOpenMenu(false) : setIsOpenMenu(true);
+  };
   return (
     <header className='radial-gradient top-0 left-0 right-0 drop-shadow-xl w-full bg-firstColor mx-[auto] flex flex-row justify-between items-center z-10 relative'>
       <div className={'flex gap-1 flex-row'}>
@@ -44,6 +48,7 @@ function Header() {
         <Hamburger
           size={25}
           label='Show menu'
+          toggled={isOpenMenu}
           onToggle={(toggled) => {
             toggled ? setIsOpenMenu(true) : setIsOpenMenu(false);
           }}
@@ -53,6 +58,7 @@ function Header() {
             ' absolute top-full left-0 bg-white items-center' +
             (isOpenMenu ? ' opacity-100 visible' : ' opacity-0 invisible')
           }
+          onClick={toggleMenu}
         >
           <Button href='http://results.bio-medica.com.ua/' isBlack={true}>
             Отримати результати

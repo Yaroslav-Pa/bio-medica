@@ -72,8 +72,6 @@ function AllServices() {
     });
   }, []);
 
-  console.log(servicesArr.Sections);
-
   return (
     <div>
       <ToTopButton

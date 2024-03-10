@@ -44,8 +44,12 @@ function SectionWithName({
             <SectionForCards cardsArr={Objects} />
           ) : (
             <div className='ml-5 flex flex-col gap-4'>
-              {Objects.map(({ Question, Answer }) => (
-                <ExtendedComponent question={Question} answer={Answer} />
+              {Objects.map(({ Question, Answer }, index) => (
+                <ExtendedComponent
+                  question={Question}
+                  answer={Answer}
+                  key={`${Question}+${Answer}+${index}`}
+                />
               ))}
             </div>
           )}
