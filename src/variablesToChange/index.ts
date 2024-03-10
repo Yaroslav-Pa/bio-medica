@@ -1,3 +1,4 @@
+import { CardType } from '@/components/card/Card';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import {
   faFacebook,
@@ -34,6 +35,7 @@ export type Social = {
 export type page = { url: string; pageName: string };
 
 type MyData = {
+  cardHolder: CardType;
   pages: page[];
   imagesForSlider: ImageForSlider[];
   phones: string[];
@@ -42,6 +44,13 @@ type MyData = {
 };
 
 export const Change: MyData = {
+  cardHolder: {
+    _uid: 'none',
+    Image: {filename: 'none'},
+    Name: 'Loading...',
+    Days: 'Loading...',
+    Price: 'Loading...',
+  },
   pages: [
     {
       url: '/',

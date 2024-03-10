@@ -18,17 +18,20 @@ function CertificateSection() {
   }, []);
 
   return (
-    <section className=" bg-firstColor my-10">
-      <div className="max-w-containerWidth mx-auto flex flex-col gap-4 px-3 py-10">
-        <div className="flex flex-col items-start gap-2">
-          <h1 className="text-xl font-bold">Ліцензії та сертифікати</h1>
+    <section className=' bg-firstColor my-10'>
+      <div className='max-w-containerWidth mx-auto flex flex-col gap-4 px-3 py-10'>
+        <div className='flex flex-col items-start gap-2'>
+          <h1 className='text-xl font-bold'>Ліцензії та сертифікати</h1>
           <ToggleButton isChecked={isShowAll} onToggle={setIsShowAll}>
             Дивитись всі
           </ToggleButton>
         </div>
-        <article className="grid grid-cols-2 md:grid-cols-4 gap-5 justify-center items-center">
-          {cards &&
-            (isShowAll
+        {cards.Certificates.length <= 0 && (
+          <div className='text-center w-full'>Loading our certificates...</div>
+        )}
+        {cards.Certificates.length > 0 && (
+          <article className='grid grid-cols-2 md:grid-cols-4 gap-5 justify-center items-center'>
+            {(isShowAll
               ? cards.Certificates
               : cards.Certificates.slice(0, 4)
             ).map(({ _uid, img: { filename }, title, url: { url } }) => (
@@ -39,7 +42,8 @@ function CertificateSection() {
                 url={url ? url : filename}
               />
             ))}
-        </article>
+          </article>
+        )}
       </div>
     </section>
   );

@@ -1,15 +1,15 @@
 'use client';
-import { useRef, useState, useEffect} from 'react';
+import { useRef, useState, useEffect } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import {getFromApi} from '../../apiGetter'
+import { getFromApi } from '../../apiGetter';
 
 const storyBlockApi =
   'https://api.storyblok.com/v2/cdn/stories/sliderphotos?cv=1707929168&token=FYShrSsmafxPX5CaF9YMKAtt&version=published';
 
 function ImageSlider() {
-  let [imagesForSlider, setImagesForSlider] = useState({Photos:[]});
+  let [imagesForSlider, setImagesForSlider] = useState({ Photos: [] });
 
   const settings = {
     dots: true,
@@ -23,7 +23,9 @@ function ImageSlider() {
   };
   const customSlider = useRef();
 
-  useEffect(()=>{getFromApi(storyBlockApi, setImagesForSlider)},[]);
+  useEffect(() => {
+    getFromApi(storyBlockApi, setImagesForSlider);
+  }, []);
 
   return (
     <>
@@ -33,16 +35,26 @@ function ImageSlider() {
             {...settings}
             ref={(slider: any) => (customSlider.current = slider)}
           >
-            {imagesForSlider.Photos?.map(
-              ({ id, filename }: { id: number; filename: string }) => (
-                <div key={id}>
-                  <div
-                    className='rounded-md relative bg-contain xl:bg-cover bg-clip-padding bg-center min-h-[65vw] ssm:min-h-[60vw] xl:min-h-[670px] flex flex-col bg-no-repeat justify-center items-start xl:py-10 text-textWhiteColor'
-                    style={{ backgroundImage: `url(${filename})` }}
-                  >
+            {imagesForSlider.Photos.length > 0 &&
+              imagesForSlider.Photos?.map(
+                ({ id, filename }: { id: number; filename: string }) => (
+                  <div key={id}>
+                    <div
+                      className='rounded-md relative bg-contain xl:bg-cover bg-clip-padding bg-center min-h-[65vw] ssm:min-h-[60vw] xl:min-h-[670px] flex flex-col bg-no-repeat justify-center items-start xl:py-10 text-textWhiteColor'
+                      style={{ backgroundImage: `url(${filename})` }}
+                    ></div>
                   </div>
-                </div>
-              )
+                )
+              )}
+            {imagesForSlider.Photos.length <= 0 && (
+              <div key={'placeholder'}>
+                <div
+                  className='rounded-md relative bg-contain xl:bg-cover bg-clip-padding bg-center min-h-[65vw] ssm:min-h-[60vw] xl:min-h-[670px] flex flex-col bg-no-repeat justify-center items-start xl:py-10 text-textWhiteColor'
+                  style={{
+                    backgroundImage: `url(https://miro.medium.com/v2/resize:fit:500/0*-ouKIOsDCzVCTjK-.png)`,
+                  }}
+                ></div>
+              </div>
             )}
           </Slider>
         </section>

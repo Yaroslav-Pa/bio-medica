@@ -7,9 +7,8 @@ import { CardType } from '@/components/card/Card';
 import NavSectionForAllService from '@/components/navSectionForAllService/NavSectionForAllService';
 import SectionWithName from '@/components/sectionWithName/SectionWithName';
 import ToTopButton from '@/components/toTopButton/ToTopButton';
-import SectionForCards from '@/components/cardsList/CardsList';
+import SectionForCards from '@/components/sectionForCards/SectionForCards';
 import Card from '@/components/card/Card';
-
 
 const storyBlockApi =
   'https://api.storyblok.com/v2/cdn/stories/allservices?cv=1708287624&token=FYShrSsmafxPX5CaF9YMKAtt&version=published';
@@ -21,7 +20,7 @@ export type Section = {
   nameOfSection: string;
 };
 
-type ServicesArrType = {
+export type ServicesArrType = {
   Sections: Section[];
 };
 
@@ -89,21 +88,14 @@ function AllServices() {
       />
       <div className='mx-auto flex flex-col max-w-[1400px]'>
         <section className='m-[10%] md:m-20 flex flex-col gap-y-32'>
-          {servicesArr.Sections.length <= 0 && <div>Loading...</div>}
-          {search === '' && servicesArr.Sections.length > 0 && (
+          {search === '' && servicesArr.Sections.length >= 0 && (
             <SectionWithName
               arr={servicesArr.Sections}
               isRounded={true}
               isForCard={true}
             />
           )}
-          {search !== '' && (
-            <SectionForCards>
-              {serchedServices.map((card: CardType) => (
-                <Card card={card} key={card._uid} />
-              ))}
-            </SectionForCards>
-          )}
+          {search !== '' && <SectionForCards cardsArr={serchedServices} />}
         </section>
       </div>
     </div>
