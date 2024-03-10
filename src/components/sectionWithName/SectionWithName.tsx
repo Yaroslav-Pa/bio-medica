@@ -39,7 +39,7 @@ function SectionWithName({
             {nameOfSection}
           </h1>
           {isForCard ? (
-            <SectionForCards gridColumns={4}>
+            <SectionForCards>
               {Objects.map((card: any) => {
                 return <Card card={card} key={card._uid} />;
               })}

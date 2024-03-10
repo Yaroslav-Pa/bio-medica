@@ -1,9 +1,7 @@
 function SectionForCards({
-  children,
-  gridColumns = 3,
+  children
 }: {
   children: React.ReactNode;
-  gridColumns?: number;
 }) {
   return (
     <section

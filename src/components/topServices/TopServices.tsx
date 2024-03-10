@@ -3,7 +3,7 @@ import { KeyboardEvent, useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import Card from '../card/Card';
+import Card, { CardType } from '../card/Card';
 import { Button } from '../button/Button';
 import { getFromApi } from '../../apiGetter';
 import SectionForCards from '../cardsList/CardsList';
@@ -21,7 +21,7 @@ function TopServices() {
     }
   };
 
-  const cardListing = cards.AllSevices.map((card: any) => (
+  const cardListing = cards.AllSevices.map((card: CardType) => (
     <div key={card._uid}>
       <Card card={card} />
     </div>

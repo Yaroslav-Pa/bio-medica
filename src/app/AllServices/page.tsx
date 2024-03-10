@@ -10,28 +10,31 @@ import ToTopButton from '@/components/toTopButton/ToTopButton';
 import SectionForCards from '@/components/cardsList/CardsList';
 import Card from '@/components/card/Card';
 
+
 const storyBlockApi =
   'https://api.storyblok.com/v2/cdn/stories/allservices?cv=1708287624&token=FYShrSsmafxPX5CaF9YMKAtt&version=published';
 
+export type Section = {
+  _uid: string;
+  Objects: CardType[];
+  component: string;
+  nameOfSection: string;
+};
+
+type ServicesArrType = {
+  Sections: Section[];
+};
+
 function AllServices() {
-  const [servicesArr, setServicesArr] = useState({
-    Sections: [{ nameOfSection: '', Objects: [] }],
+  const [servicesArr, setServicesArr] = useState<ServicesArrType>({
+    Sections: [],
   });
-  const [serchedServices, setSerchedServices]: [
-    serchedServices: [],
-    setSerchedServices: Function
-  ] = useState([]);
+  const [serchedServices, setSerchedServices] = useState<CardType[]>([]);
   const [currentHeight, setCurrentHeight] = useState(0);
   const [search, setSearch] = useState('');
   const searchParams = useSearchParams();
-  const [sectionsNameArray, setSectionsNameArray]: [
-    sectionsNameArray: string[],
-    setSectionsNameArray: Function
-  ] = useState([]);
-  const [flattedAllServices, setFlattedAllServices]: [
-    flattedAllServices: CardType[],
-    setFlattedAllServices: Function
-  ] = useState([]);
+  const [sectionsNameArray, setSectionsNameArray] = useState<string[]>([]);
+  const [flattedAllServices, setFlattedAllServices] = useState<CardType[]>([]);
 
   useEffect(() => {
     getFromApi(storyBlockApi, setServicesArr);
@@ -46,8 +49,7 @@ function AllServices() {
         ...sectionsNameArray,
         nameOfSection,
       ]);
-      Objects.forEach((card: any) => {
-        console.log('1');
+      Objects.forEach((card: CardType) => {
         setFlattedAllServices((flattedAllServices: CardType[]) => [
           ...flattedAllServices,
           card,
@@ -71,6 +73,8 @@ function AllServices() {
     });
   }, []);
 
+  console.log(servicesArr.Sections);
+
   return (
     <div>
       <ToTopButton
@@ -85,7 +89,8 @@ function AllServices() {
       />
       <div className='mx-auto flex flex-col max-w-[1400px]'>
         <section className='m-[10%] md:m-20 flex flex-col gap-y-32'>
-          {search === '' && servicesArr.Sections && (
+          {servicesArr.Sections.length <= 0 && <div>Loading...</div>}
+          {search === '' && servicesArr.Sections.length > 0 && (
             <SectionWithName
               arr={servicesArr.Sections}
               isRounded={true}
@@ -93,8 +98,8 @@ function AllServices() {
             />
           )}
           {search !== '' && (
-            <SectionForCards gridColumns={4}>
-              {serchedServices.map((card: any) => (
+            <SectionForCards>
+              {serchedServices.map((card: CardType) => (
                 <Card card={card} key={card._uid} />
               ))}
             </SectionForCards>
