@@ -3,10 +3,12 @@ import { KeyboardEvent, useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import Card, { CardType } from '../card/Card';
+import Card from '../card/Card';
 import { Button } from '../button/Button';
 import { getFromApi } from '../../apiGetter';
 import SectionForCards from '../sectionForCards/SectionForCards';
+import { Change } from '@/variablesToChange';
+const { cardHolder } = Change;
 
 const storyBlockApi =
   'https://api.storyblok.com/v2/cdn/stories/topservices?cv=1708287624&token=FYShrSsmafxPX5CaF9YMKAtt&version=published';
@@ -44,7 +46,10 @@ function TopServices() {
           </div>
         </div>
         <article className='flex flex-col justify-center items-center gap-10'>
-          <SectionForCards cardsArr={cards.AllSevices} />
+          {cards.AllSevices.length > 0 && (
+            <SectionForCards cardsArr={cards.AllSevices} />
+          )}
+          {cards.AllSevices.length <= 0 && <Card card={cardHolder} />}
           <Button href='/AllServices#top'>Продивитись усі</Button>
         </article>
       </div>

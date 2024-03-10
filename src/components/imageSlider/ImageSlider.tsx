@@ -48,7 +48,7 @@ function ImageSlider() {
           </Slider>}
           {imagesForSlider.Photos.length <= 0 && (
             <div className='rounded-lg min-h-[65vw] ssm:min-h-[60vw] xl:min-h-[670px] flex justify-center items-center xl:py-10 border-cardSecondColor border-2 text-cardSecondColor font-bold text-[32px]'>
-              Loading...
+              Завантаження...
             </div>
           )}
         </section>

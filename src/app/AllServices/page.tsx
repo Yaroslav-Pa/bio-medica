@@ -9,6 +9,9 @@ import SectionWithName from '@/components/sectionWithName/SectionWithName';
 import ToTopButton from '@/components/toTopButton/ToTopButton';
 import SectionForCards from '@/components/sectionForCards/SectionForCards';
 import Card from '@/components/card/Card';
+import { Change } from '@/variablesToChange';
+const {cardHolder} = Change;
+
 
 const storyBlockApi =
   'https://api.storyblok.com/v2/cdn/stories/allservices?cv=1708287624&token=FYShrSsmafxPX5CaF9YMKAtt&version=published';
@@ -86,14 +89,17 @@ function AllServices() {
       />
       <div className='mx-auto flex flex-col max-w-[1400px]'>
         <section className='m-[10%] md:m-20 flex flex-col gap-y-32'>
-          {search === '' && servicesArr.Sections.length >= 0 && (
+          {search === '' && servicesArr.Sections.length > 0 && (
             <SectionWithName
               arr={servicesArr.Sections}
               isRounded={true}
               isForCard={true}
             />
           )}
-          {search !== '' && <SectionForCards cardsArr={serchedServices} />}
+          {search !== '' && servicesArr.Sections.length > 0 && <SectionForCards cardsArr={serchedServices}/>}
+          {search === '' && servicesArr.Sections.length <= 0 && (
+            <Card card={cardHolder} />
+          )}
         </section>
       </div>
     </div>

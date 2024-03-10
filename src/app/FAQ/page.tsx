@@ -18,7 +18,7 @@ function Faqs() {
     <div className='mx-auto flex flex-col max-w-[1200px]'>
       <section className='m-[10%] md:m-20 flex flex-col gap-20'>
         {infoArr.Sections.length <= 0 && (
-          <ExtendedComponent question={'Loading...'} answer={'Loading...'} />
+          <ExtendedComponent question={'Завантаження...'} answer={'Завантаження...'} />
         )}
         {infoArr.Sections.length > 0 && (
           <SectionWithName arr={infoArr.Sections} />

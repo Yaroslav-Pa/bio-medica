@@ -6,6 +6,8 @@ export type CardType = {
   Price: string;
   url?: string;
 };
+import { Change } from '@/variablesToChange';
+const { cardHolder } = Change;
 
 function Card({ card }: { card: CardType }) {
   const {
@@ -21,17 +23,17 @@ function Card({ card }: { card: CardType }) {
         {Name}
       </h2>
       <p className='hidden sm:block basis-1/12 text-center'>
-        {Days !== 'Loading...' ? `${Days} дн.` : Days}
+        {Days !== cardHolder.Days ? `${Days} дн.` : Days}
       </p>
       <p className='hidden sm:block basis-1/4 text-center py-1 px-3 bg-cardSecondColor text-white font-bold rounded-md'>
-        {Price !== 'Loading...' ? `${Price} ₴` : Price}
+        {Price !== cardHolder.Price ? `${Price} ₴` : Price}
       </p>
       <div className='sm:hidden flex flex-row justify-between w-full'>
         <p className=' basis-1/2 ssm:basis-1/3 text-center'>
-          {Days !== 'Loading...' ? `${Days} дн.` : Days}
+          {Days !== cardHolder.Days ? `${Days} дн.` : Days}
         </p>
         <p className=' basis-1/2 ssm:basis-1/3 text-center py-1 px-3 bg-cardSecondColor text-white font-bold rounded-md'>
-          {Price !== 'Loading...' ? `${Price} ₴` : Price}
+          {Price !== cardHolder.Price  ? `${Price} ₴` : Price}
         </p>
       </div>
     </section>

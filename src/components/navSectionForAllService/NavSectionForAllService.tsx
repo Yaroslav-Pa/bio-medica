@@ -16,7 +16,7 @@ function NavSectionForAllService({
 
   const searchAndSectionNameListing = (
     <>
-      <div className={!isOpen ? ' opacity-0 invisible' : ' opacity-100 visible'}>
+      <div className={!isOpen ? ' opacity-0 invisible 3xl:opacity-100 3xl:visible' : ' opacity-100 visible'}>
         <h2>Пошук аналізів</h2>
         <input
           className='border-2 rounded-lg px-3 py-1 border-cardSecondColor 3xl:border-stone-300'
@@ -31,15 +31,14 @@ function NavSectionForAllService({
       <div
         className={
           'flex flex-col gap-2 transition-opacity' +
-          (searchValue != '' || !isOpen ? ' opacity-0 invisible' : ' opacity-100 visible')
+          (searchValue != '' || !isOpen ? ' opacity-0 invisible 3xl:opacity-100 3xl:visible' : ' opacity-100 visible')
         }
       >
         <h2 className='border-b-2 border-b-cardSecondColor 3xl:border-b-stone-300'>
           Доступні аналізів по розділам
         </h2>
-        <div className='flex flex-col gap-3'>
-          {array &&
-            array.map((text) => (
+        {array &&<div className='flex flex-col gap-3'>
+          {array.length > 0 && array.map((text) => (
               <Link
                 href={`#${text}`}
                 scroll={true}
@@ -49,7 +48,8 @@ function NavSectionForAllService({
                 {text}
               </Link>
             ))}
-        </div>
+            {array.length <= 0 && <div>Звантаження розділів...</div>}
+        </div>}
       </div>
     </>
   );

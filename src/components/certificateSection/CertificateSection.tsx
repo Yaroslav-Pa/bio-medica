@@ -27,7 +27,7 @@ function CertificateSection() {
           </ToggleButton>
         </div>
         {cards.Certificates.length <= 0 && (
-          <div className='text-center w-full'>Loading our certificates...</div>
+          <div className='text-center w-full'>Завантаження сертифікатів...</div>
         )}
         {cards.Certificates.length > 0 && (
           <article className='grid grid-cols-2 md:grid-cols-4 gap-5 justify-center items-center'>

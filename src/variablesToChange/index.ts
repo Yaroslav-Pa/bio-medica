@@ -47,9 +47,9 @@ export const Change: MyData = {
   cardHolder: {
     _uid: 'none',
     Image: {filename: 'none'},
-    Name: 'Loading...',
-    Days: 'Loading...',
-    Price: 'Loading...',
+    Name: 'Завантаження...',
+    Days: 'Завантаження...',
+    Price: 'Завантаження...',
   },
   pages: [
     {

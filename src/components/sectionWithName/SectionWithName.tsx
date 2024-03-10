@@ -62,7 +62,7 @@ function SectionWithName({
     <SectionForCards cardsArr={[cardHolder]} />
   ) : (
     <div className='ml-5 flex flex-col gap-4'>
-      <ExtendedComponent question={'Loading...'} answer={'Loading...'} />
+      <ExtendedComponent question={'Завантаження...'} answer={'Завантаження...'} />
     </div>
   );
 
