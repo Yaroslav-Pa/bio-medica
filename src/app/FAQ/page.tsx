@@ -4,8 +4,8 @@ import ExtendedComponent from '@/components/extendedComponent/ExtendedComponent'
 import SectionWithName from '@/components/sectionWithName/SectionWithName';
 import { useEffect, useState } from 'react';
 import { ServicesArrType } from '../AllServices/page';
-const storyBlockApi =
-  'https://api.storyblok.com/v2/cdn/stories/faq?version=published&token=FYShrSsmafxPX5CaF9YMKAtt&cv=1708031949';
+import { Change } from '@/variablesToChange';
+const {FAQApi:storyBlockApi} = Change;
 
 function Faqs() {
   const [infoArr, setInfoArr] = useState<ServicesArrType>({ Sections: [] });

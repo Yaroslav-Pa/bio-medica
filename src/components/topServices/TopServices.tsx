@@ -9,9 +9,7 @@ import { getFromApi } from '../../apiGetter';
 import SectionForCards from '../sectionForCards/SectionForCards';
 import { Change } from '@/variablesToChange';
 const { cardHolder } = Change;
-
-const storyBlockApi =
-  'https://api.storyblok.com/v2/cdn/stories/topservices?cv=1708287624&token=FYShrSsmafxPX5CaF9YMKAtt&version=published';
+const {TopServicesApi:storyBlockApi} = Change;
 
 function TopServices() {
   const [cards, setCards] = useState({ AllSevices: [] });

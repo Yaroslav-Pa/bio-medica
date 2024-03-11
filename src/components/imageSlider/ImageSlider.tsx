@@ -4,9 +4,8 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { getFromApi } from '../../apiGetter';
-
-const storyBlockApi =
-  'https://api.storyblok.com/v2/cdn/stories/sliderphotos?cv=1707929168&token=FYShrSsmafxPX5CaF9YMKAtt&version=published';
+import { Change } from '@/variablesToChange';
+const {ImageSliderApi:storyBlockApi} = Change;
 
 function ImageSlider() {
   let [imagesForSlider, setImagesForSlider] = useState({ Photos: [] });

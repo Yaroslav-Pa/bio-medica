@@ -11,10 +11,7 @@ import SectionForCards from '@/components/sectionForCards/SectionForCards';
 import Card from '@/components/card/Card';
 import { Change } from '@/variablesToChange';
 const {cardHolder} = Change;
-
-
-const storyBlockApi =
-  'https://api.storyblok.com/v2/cdn/stories/allservices?cv=1708287624&token=FYShrSsmafxPX5CaF9YMKAtt&version=published';
+const {AllServicesApi:storyBlockApi} = Change;
 
 export type Section = {
   _uid: string;

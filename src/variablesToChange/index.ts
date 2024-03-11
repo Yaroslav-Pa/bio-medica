@@ -35,6 +35,11 @@ export type Social = {
 export type page = { url: string; pageName: string };
 
 type MyData = {
+  FAQApi: string;
+  AllServicesApi: string;
+  ImageSliderApi: string;
+  TopServicesApi: string;
+  CertificateApi: string;
   cardHolder: CardType;
   pages: page[];
   imagesForSlider: ImageForSlider[];
@@ -44,9 +49,19 @@ type MyData = {
 };
 
 export const Change: MyData = {
+  FAQApi:
+    'https://api.storyblok.com/v2/cdn/stories/faq?version=published&token=FYShrSsmafxPX5CaF9YMKAtt&cv=1708031949',
+  AllServicesApi:
+    'https://api.storyblok.com/v2/cdn/stories/allservices?cv=1708287624&token=FYShrSsmafxPX5CaF9YMKAtt&version=published',
+  ImageSliderApi:
+    'https://api.storyblok.com/v2/cdn/stories/sliderphotos?cv=1707929168&token=FYShrSsmafxPX5CaF9YMKAtt&version=published',
+  TopServicesApi:
+    'https://api.storyblok.com/v2/cdn/stories/topservices?cv=1708287624&token=FYShrSsmafxPX5CaF9YMKAtt&version=published',
+  CertificateApi:
+    'https://api.storyblok.com/v2/cdn/stories/allcertificates?cv=1707941033&token=FYShrSsmafxPX5CaF9YMKAtt&version=published',
   cardHolder: {
     _uid: 'none',
-    Image: {filename: 'none'},
+    Image: { filename: 'none' },
     Name: 'Завантаження...',
     Days: 'Завантаження...',
     Price: 'Завантаження...',

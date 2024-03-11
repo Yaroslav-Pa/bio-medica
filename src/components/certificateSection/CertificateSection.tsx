@@ -5,9 +5,8 @@ import { Button } from '../button/Button';
 import { useEffect, useState } from 'react';
 import { getFromApi } from '../../apiGetter';
 import ToggleButton from '../button/ToggleButton';
-
-const storyBlockApi =
-  'https://api.storyblok.com/v2/cdn/stories/allcertificates?cv=1707941033&token=FYShrSsmafxPX5CaF9YMKAtt&version=published';
+import { Change } from '@/variablesToChange';
+const {CertificateApi:storyBlockApi} = Change;
 
 function CertificateSection() {
   const [cards, setCards] = useState({ Certificates: [] });
