@@ -76,6 +76,10 @@ export const Change: MyData = {
       pageName: 'Перелік аналізів',
     },
     {
+      url: '/AboutUs',
+      pageName: 'Контакти',
+    },
+    {
       url: './FAQ',
       pageName: 'Часті запитання',
     },
