@@ -12,8 +12,10 @@ function renderAddress(address: string) {
 
 export function DataView({ location }: { location: MapLocation }) {
   return (
-    <div className="absolute left-10 top-[45%] mx-auto z-[400] bg-white rounded-lg p-4">
-      <p className="font-bold text-center">{renderAddress(location.address)}</p>
+    <div className="bg-white rounded-lg p-4">
+      <p className="font-bold md:text-center">
+        {renderAddress(location.address)}
+      </p>
       <p>{location.phone}</p>
       <p>
         {location.schedule.weekdays}{' '}

@@ -19,17 +19,16 @@ const MapSection: React.FC = () => {
   );
 
   return (
-    <div className='flex flex-col lg:flex-row pb-20 pl-6 pr-6 gap-5 lg:gap-0'>
-      <div className='w-full lg:w-1/4 sm:px-4 py-8 lg:px-4 lg:py-4 order-1 lg:order-0'>
-        <h2 className='text-xl font-semibold mb-4'>Адреса відділень</h2>
+    <div className="flex flex-col lg:flex-row pb-20 pl-6 pr-6 gap-5 lg:gap-0">
+      <div className="w-full lg:w-1/4 sm:px-4 md:py-8 lg:px-4 lg:py-4 order-1 lg:order-0">
+        <h2 className="text-xl font-semibold mb-4">Адреса відділень</h2>
         <Tabs
           onTabClick={setSelectedLocation}
           selectedLocation={selectedLocation}
         ></Tabs>
       </div>
-
-      <div className='h-[450px] w-full lg:h-[600px] lg:w-3/4 sm:p-4 relative lg:order-1'>
-        <h2 className='text-xl font-semibold mb-4'>Карта відділень</h2>
+      <div className="h-[450px] w-full lg:h-[600px] lg:w-3/4 sm:p-4 relative lg:order-1">
+        <h2 className="text-xl font-semibold mb-4">Карта відділень</h2>
         <Map
           selectedLocation={selectedLocation}
           markers={Object.values(Change.map).reduce(
@@ -37,9 +36,13 @@ const MapSection: React.FC = () => {
             [] as MapLocation[]
           )}
         />
-        <div className='hidden md:block'>
+        <div className="absolute left-10 top-[45%] mx-auto z-[400] hidden md:block">
           <DataView location={selectedLocation} />
         </div>
+      </div>
+      <div className="block md:hidden sm:px-4">
+        <h2 className="text-xl font-semibold pt-8">Відділення: </h2>
+        <DataView location={selectedLocation} />
       </div>
     </div>
   );
