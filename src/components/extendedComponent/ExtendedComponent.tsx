@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 
-interface QuestionProps {
+type QuestionProps = {
   question: string;
   answer: string;
-}
+};
 
 const ExtendedComponent: React.FC<QuestionProps> = ({ question, answer }) => {
   const [isExpanded, setIsExpanded] = useState(false);

@@ -48,6 +48,13 @@ type MyData = {
   socials: Social[];
 };
 
+export const cardHolder = {
+  Name: 'Завантаження...',
+  Days: 'Завантаження...',
+  Price: 'Завантаження...',
+  _uid: 'Завантаження...',
+};
+
 export const Change: MyData = {
   FAQApi:
     'https://api.storyblok.com/v2/cdn/stories/faq?version=published&token=FYShrSsmafxPX5CaF9YMKAtt&cv=1708031949',
@@ -59,13 +66,7 @@ export const Change: MyData = {
     'https://api.storyblok.com/v2/cdn/stories/topservices?cv=1708287624&token=FYShrSsmafxPX5CaF9YMKAtt&version=published',
   CertificateApi:
     'https://api.storyblok.com/v2/cdn/stories/allcertificates?cv=1707941033&token=FYShrSsmafxPX5CaF9YMKAtt&version=published',
-  cardHolder: {
-    _uid: 'none',
-    Image: { filename: 'none' },
-    Name: 'Завантаження...',
-    Days: 'Завантаження...',
-    Price: 'Завантаження...',
-  },
+  cardHolder,
   pages: [
     {
       url: '/',
