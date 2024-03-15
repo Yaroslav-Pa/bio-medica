@@ -1,0 +1,60 @@
+import '../layout/header/styles.css';
+import ExtendedComponent from '@/components/extendedComponent/ExtendedComponent';
+import { QuestionProps } from '@/components/extendedComponent/ExtendedComponent';
+
+export type QuestionSectionType = {
+  _uid: string;
+  questions: QuestionProps[];
+  title: string;
+};
+
+function NamedSectionQuestions({
+  arr,
+  isRounded = false,
+}: {
+  arr: QuestionSectionType[];
+  isRounded?: boolean;
+}) {
+  const normalComponentListing = arr.map(({ title, questions, _uid }) => {
+    return (
+      <div className='gap-10 flex flex-col' key={`${_uid}+${title}`} id={title}>
+        <h1
+          className={
+            'pl-3 text-xl p-2 font-bold ' +
+            (isRounded
+              ? ' radial-gradient text-white rounded-lg'
+              : ' border-b-2 border-firstColor')
+          }
+        >
+          {title}
+        </h1>
+
+        <div className='ml-5 flex flex-col gap-4'>
+          {questions.map(({ question, answer }, index) => {
+            console.log(question, answer);
+            return (
+              <ExtendedComponent
+                question={question}
+                answer={answer}
+                key={`${question}+${answer}+${index}`}
+              />
+            );
+          })}
+        </div>
+      </div>
+    );
+  });
+
+  const Placeholder = (
+    <div className='ml-5 flex flex-col gap-4'>
+      <ExtendedComponent
+        question={'Завантаження...'}
+        answer={'Завантаження...'}
+      />
+    </div>
+  );
+
+  return arr.length > 0 ? normalComponentListing : Placeholder;
+}
+
+export default NamedSectionQuestions;

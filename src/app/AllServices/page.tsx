@@ -4,12 +4,11 @@ import { useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { CardType } from '@/components/card/Card';
 import NavSectionForAllService from '@/components/navSectionForAllService/NavSectionForAllService';
-import SectionWithName from '@/components/sectionWithName/SectionWithName';
 import ToTopButton from '@/components/toTopButton/ToTopButton';
 import SectionForCards from '@/components/sectionForCards/SectionForCards';
 import Card from '@/components/card/Card';
 import { Change, cardHolder } from '@/variablesToChange';
-
+import NamedSectionCards from '@/components/namedSectionCards/NamedSectionCards';
 const { AllServicesApi: storyBlockApi } = Change;
 
 export type Section = {
@@ -40,7 +39,7 @@ function AllServices() {
         ...sectionsNameArray,
         title,
       ]);
-      services.forEach((card: CardType) => {
+      services?.forEach((card: CardType) => {
         setFlattedAllServices((flattedAllServices: CardType[]) => [
           ...flattedAllServices,
           card,
@@ -76,14 +75,10 @@ function AllServices() {
         setSearch={setSearch}
         array={sectionsNameArray}
       />
-      <div className="mx-auto flex flex-col max-w-[1400px]">
-        <section className="m-[10%] md:m-20 flex flex-col gap-y-32">
+      <div className='mx-auto flex flex-col max-w-[1400px]'>
+        <section className='m-[10%] md:m-20 flex flex-col gap-y-32'>
           {search === '' && servicesArr.length > 0 && (
-            <SectionWithName
-              arr={servicesArr}
-              isRounded={true}
-              isForCard={true}
-            />
+            <NamedSectionCards arr={servicesArr} isRounded={true} />
           )}
           {search !== '' && servicesArr.length > 0 && (
             <SectionForCards cardsArr={serchedServices} />

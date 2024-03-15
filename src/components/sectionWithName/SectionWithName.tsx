@@ -3,11 +3,7 @@ import '../layout/header/styles.css';
 import ExtendedComponent from '@/components/extendedComponent/ExtendedComponent';
 import { cardHolder } from '@/variablesToChange';
 import { Section } from '@/app/AllServices/page';
-
-type Question = {
-  Question: string;
-  Answer: string;
-};
+import { QuestionProps } from '@/components/extendedComponent/ExtendedComponent';
 
 function SectionWithName({
   arr,
@@ -35,12 +31,12 @@ function SectionWithName({
           <SectionForCards cardsArr={services} />
         ) : (
           <div className="ml-5 flex flex-col gap-4">
-            {(services as unknown as Question[]).map(
-              ({ Question, Answer }, index) => (
+            {(services as unknown as QuestionProps[]).map(
+              ({ question, answer }, index) => (
                 <ExtendedComponent
-                  question={Question}
-                  answer={Answer}
-                  key={`${Question}+${Answer}+${index}`}
+                  question={question}
+                  answer={answer}
+                  key={`${question}+${answer}+${index}`}
                 />
               )
             )}

@@ -57,7 +57,7 @@ export const cardHolder = {
 
 export const Change: MyData = {
   FAQApi:
-    'https://api.storyblok.com/v2/cdn/stories/faq?version=published&token=FYShrSsmafxPX5CaF9YMKAtt&cv=1708031949',
+    'https://api.storyblok.com/v2/cdn/stories/faq?cv=1710496295&token=FYShrSsmafxPX5CaF9YMKAtt&version=published',
   AllServicesApi:
     'https://api.storyblok.com/v2/cdn/stories/allservices?cv=1708287624&token=FYShrSsmafxPX5CaF9YMKAtt&version=published',
   ImageSliderApi:
