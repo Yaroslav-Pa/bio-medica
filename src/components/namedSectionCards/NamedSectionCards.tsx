@@ -1,13 +1,20 @@
 import SectionForCards from '../sectionForCards/SectionForCards';
 import '../layout/header/styles.css';
 import { cardHolder } from '@/variablesToChange';
-import { Section } from '@/app/AllServices/page';
+import { CardType } from '../card/Card';
+
+
+export type CardSectionType = {
+  _uid: string;
+  services: CardType[];
+  title: string;
+};
 
 function NamedSectionCards({
   arr,
   isRounded = false,
 }: {
-  arr: Section[];
+  arr: CardSectionType[];
   isRounded?: boolean;
 }) {
   const normalComponentListing = arr.map(({ title, services, _uid }) => {

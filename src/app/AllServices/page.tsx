@@ -9,16 +9,13 @@ import SectionForCards from '@/components/sectionForCards/SectionForCards';
 import Card from '@/components/card/Card';
 import { Change, cardHolder } from '@/variablesToChange';
 import NamedSectionCards from '@/components/namedSectionCards/NamedSectionCards';
+import { CardSectionType } from '@/components/namedSectionCards/NamedSectionCards';
 const { AllServicesApi: storyBlockApi } = Change;
 
-export type Section = {
-  _uid: string;
-  services: CardType[];
-  title: string;
-};
+
 
 function AllServices() {
-  const [servicesArr, setServicesArr] = useState<Section[]>([]);
+  const [servicesArr, setServicesArr] = useState<CardSectionType[]>([]);
   const [serchedServices, setSerchedServices] = useState<CardType[]>([]);
   const [currentHeight, setCurrentHeight] = useState(0);
   const [search, setSearch] = useState('');
