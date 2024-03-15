@@ -16,6 +16,8 @@ const config: Config = {
       'xl': '1280px',
       '2xl': '1536px',
       '3xl': '1850px',
+      '4xl': '2210px',
+      '5xl': '2450px',
     },
     extend: {
       backgroundImage: {},

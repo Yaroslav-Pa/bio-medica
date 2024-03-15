@@ -7,16 +7,24 @@ function NavSectionForAllService({
   searchValue,
   setSearch,
   array,
+  currentScroll,
 }: {
   searchValue: string;
   setSearch: Function;
   array?: string[];
+  currentScroll?: number;
 }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const searchAndSectionNameListing = (
     <>
-      <div className={!isOpen ? ' opacity-0 invisible 3xl:opacity-100 3xl:visible' : ' opacity-100 visible'}>
+      <div
+        className={
+          !isOpen
+            ? ' opacity-0 invisible 3xl:opacity-100 3xl:visible'
+            : ' opacity-100 visible'
+        }
+      >
         <h2>Пошук аналізів</h2>
         <input
           className='border-2 rounded-lg px-3 py-1 border-cardSecondColor 3xl:border-stone-300'
@@ -31,32 +39,42 @@ function NavSectionForAllService({
       <div
         className={
           'flex flex-col gap-2 transition-opacity' +
-          (searchValue != '' || !isOpen ? ' opacity-0 invisible 3xl:opacity-100 3xl:visible' : ' opacity-100 visible')
+          (searchValue != '' || !isOpen
+            ? ' opacity-0 invisible 3xl:opacity-100 3xl:visible'
+            : ' opacity-100 visible')
         }
       >
         <h2 className='border-b-2 border-b-cardSecondColor 3xl:border-b-stone-300'>
           Доступні аналізів по розділам
         </h2>
-        {array &&<div className='flex flex-col gap-3'>
-          {array.length > 0 && array.map((text) => (
-              <Link
-                href={`#${text}`}
-                scroll={true}
-                key={text}
-                className="relative text-xl w-fit block after:block after:content-[''] after:absolute after:left-0 after:h-[2px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left transition-all duration-300 px-5 pl-0 hover:pl-3"
-              >
-                {text}
-              </Link>
-            ))}
+        {array && (
+          <div className='flex flex-col gap-3'>
+            {array.length > 0 &&
+              array.map((text) => (
+                <Link
+                  href={`#${text}`}
+                  scroll={true}
+                  key={text}
+                  className="relative text-xl w-fit block after:block after:content-[''] after:absolute after:left-0 after:h-[2px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left transition-all duration-300 px-5 pl-0 hover:pl-3 3xl:hover:pl-1 3xl:max-w-[250px] 4xl:max-w-[400px] 5xl:max-w-[520px]"
+                >
+                  {text}
+                </Link>
+              ))}
             {array.length <= 0 && <div>Звантаження розділів...</div>}
-        </div>}
+          </div>
+        )}
       </div>
     </>
   );
 
   return (
     <>
-      <section className='hidden 3xl:flex flex-col fixed top-16 left-5 m-5 w-fit gap-5'>
+      <section
+        className={
+          'hidden 3xl:flex flex-col fixed left-5 m-5 w-fit gap-5 transition-all duration-300' +
+          (currentScroll && currentScroll > 60 ? ' top-3' : ' top-16')
+        }
+      >
         {searchAndSectionNameListing}
       </section>
       <section className='3xl:hidden'>

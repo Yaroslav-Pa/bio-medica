@@ -71,6 +71,7 @@ function AllServices() {
         searchValue={search}
         setSearch={setSearch}
         array={sectionsNameArray}
+        currentScroll={currentHeight}
       />
       <div className='mx-auto flex flex-col max-w-[1400px]'>
         <section className='m-[10%] md:m-20 flex flex-col gap-y-32'>
