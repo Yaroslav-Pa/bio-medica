@@ -2,10 +2,9 @@
 import { getFromApi, transformSections } from '@/apiGetter';
 import ExtendedComponent from '@/components/extendedComponent/ExtendedComponent';
 import { useEffect, useState } from 'react';
-import { Section } from '../AllServices/page';
 import { Change } from '@/variablesToChange';
-import NamedSectionQuestions from '@/components/namedSectionQuestions/NamedSectionQuestions';
-import { QuestionSectionType } from '@/components/namedSectionQuestions/NamedSectionQuestions';
+import NamedSectionQuestions from '@/components/namedSections/namedSectionQuestions/NamedSectionQuestions';
+import { QuestionSectionType } from '@/components/namedSections/namedSectionQuestions/NamedSectionQuestions';
 const { FAQApi: storyBlockApi } = Change;
 
 function Faqs() {

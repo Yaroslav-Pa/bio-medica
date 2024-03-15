@@ -1,8 +1,8 @@
-import SectionForCards from '../sectionForCards/SectionForCards';
+import SectionForCards from '../../sectionForCards/SectionForCards';
+import TitleForNamedSections from '../titleForNamedSections/TitleForNamedSections';
 import '../layout/header/styles.css';
 import { cardHolder } from '@/variablesToChange';
-import { CardType } from '../card/Card';
-
+import { CardType } from '../../card/Card';
 
 export type CardSectionType = {
   _uid: string;
@@ -20,16 +20,8 @@ function NamedSectionCards({
   const normalComponentListing = arr.map(({ title, services, _uid }) => {
     return (
       <div className='gap-10 flex flex-col' key={`${_uid}+${title}`} id={title}>
-        <h1
-          className={
-            'pl-3 text-xl p-2 font-bold ' +
-            (isRounded
-              ? ' radial-gradient text-white rounded-lg'
-              : ' border-b-2 border-firstColor')
-          }
-        >
-          {title}
-        </h1>
+        <TitleForNamedSections isRounded={isRounded} title={title} />
+        
         <SectionForCards cardsArr={services} />
       </div>
     );

@@ -1,6 +1,7 @@
 import '../layout/header/styles.css';
 import ExtendedComponent from '@/components/extendedComponent/ExtendedComponent';
 import { QuestionProps } from '@/components/extendedComponent/ExtendedComponent';
+import TitleForNamedSections from '../titleForNamedSections/TitleForNamedSections';
 
 export type QuestionSectionType = {
   _uid: string;
@@ -18,20 +19,10 @@ function NamedSectionQuestions({
   const normalComponentListing = arr.map(({ title, questions, _uid }) => {
     return (
       <div className='gap-10 flex flex-col' key={`${_uid}+${title}`} id={title}>
-        <h1
-          className={
-            'pl-3 text-xl p-2 font-bold ' +
-            (isRounded
-              ? ' radial-gradient text-white rounded-lg'
-              : ' border-b-2 border-firstColor')
-          }
-        >
-          {title}
-        </h1>
-
+        <TitleForNamedSections isRounded={isRounded} title={title} />
+        
         <div className='ml-5 flex flex-col gap-4'>
           {questions.map(({ question, answer }, index) => {
-            console.log(question, answer);
             return (
               <ExtendedComponent
                 question={question}
@@ -40,6 +31,7 @@ function NamedSectionQuestions({
               />
             );
           })}
+          tT
         </div>
       </div>
     );

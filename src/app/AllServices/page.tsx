@@ -8,8 +8,8 @@ import ToTopButton from '@/components/toTopButton/ToTopButton';
 import SectionForCards from '@/components/sectionForCards/SectionForCards';
 import Card from '@/components/card/Card';
 import { Change, cardHolder } from '@/variablesToChange';
-import NamedSectionCards from '@/components/namedSectionCards/NamedSectionCards';
-import { CardSectionType } from '@/components/namedSectionCards/NamedSectionCards';
+import NamedSectionCards from '@/components/namedSections/namedSectionCards/NamedSectionCards';
+import { CardSectionType } from '@/components/namedSections/namedSectionCards/NamedSectionCards';
 const { AllServicesApi: storyBlockApi } = Change;
 
 

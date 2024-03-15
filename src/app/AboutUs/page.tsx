@@ -1,5 +1,4 @@
 import MapSection from '@/components/mapSection/MapSection';
-import SocialsIsonsList from '@/components/socialsIcons/SocialsiconsList';
 import { Change } from '@/variablesToChange';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';

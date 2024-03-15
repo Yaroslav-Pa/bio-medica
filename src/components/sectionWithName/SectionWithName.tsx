@@ -2,7 +2,7 @@ import SectionForCards from '../sectionForCards/SectionForCards';
 import '../layout/header/styles.css';
 import ExtendedComponent from '@/components/extendedComponent/ExtendedComponent';
 import { cardHolder } from '@/variablesToChange';
-import { Section } from '@/app/AllServices/page';
+import { CardSectionType } from '../namedSections/namedSectionCards/NamedSectionCards';
 import { QuestionProps } from '@/components/extendedComponent/ExtendedComponent';
 
 function SectionWithName({
@@ -10,7 +10,7 @@ function SectionWithName({
   isRounded = false,
   isForCard = false,
 }: {
-  arr: Section[];
+  arr: CardSectionType[];
   isRounded?: boolean;
   isForCard?: boolean;
 }) {
