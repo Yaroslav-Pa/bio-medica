@@ -38,7 +38,7 @@ function NavSectionForAllService({
       </div>
       <div
         className={
-          'flex flex-col gap-2 transition-opacity' +
+          'flex flex-col gap-2 transition-opacity duration-500 px-6 md:px-0 ' +
           (searchValue != '' || !isOpen
             ? ' opacity-0 invisible 3xl:opacity-100 3xl:visible'
             : ' opacity-100 visible')
@@ -48,7 +48,7 @@ function NavSectionForAllService({
           Доступні аналізів по розділам
         </h2>
         {array && (
-          <div className='flex flex-col gap-3 overflow-auto overflow-y-scroll max-h-[78vh]'>
+          <div className='flex flex-col gap-3 overflow-auto overflow-y-scroll max-h-[70vh] 3xl:max-h-[58vh]'>
             {array.length > 0 &&
               array.map((text) =>
                 text.split('\n').map((title) => (
@@ -56,7 +56,7 @@ function NavSectionForAllService({
                     href={`#${text}`}
                     scroll={true}
                     key={title}
-                    className="relative text-xl w-fit block after:block after:content-[''] after:absolute after:left-0 after:h-[2px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left transition-all duration-300 px-5 pl-0 hover:pl-3 3xl:hover:pl-1 3xl:max-w-[250px] 4xl:max-w-[400px] 5xl:max-w-[520px]"
+                    className="relative text-base md:text-medium lg:text-large w-fit block after:block after:content-[''] after:absolute after:left-0 after:h-[2px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left transition-all duration-300 px-5 pl-0 hover:pl-3 3xl:hover:pl-1 3xl:max-w-[250px] 4xl:max-w-[400px] 5xl:max-w-[520px]"
                   >
                     {title}
                   </Link>
@@ -93,8 +93,9 @@ function NavSectionForAllService({
         </div>
         <div
           className={
-            'fixed top-0 bottom-0 w-screen md:left-0 md:w-fit bg-white bg-opacity-80 md:bg-opacity-100 z-10 transition-all duration-500 flex flex-col justify-start items-center gap-6 pt-10 sm:pl-14 ssm:px-10 ssm:py-10' +
-            (isOpen ? ' opacity-100 visible' : ' opacity-0 invisible')
+            'fixed top-0 bottom-0 w-screen md:left-0 md:w-fit bg-white md:bg-opacity-100 z-10 transition-all duration-500 flex flex-col justify-start items-center gap-6 pt-10 sm:pl-14 ssm:px-10 ssm:py-10 md:max-w-[700px]' +
+            (isOpen ? ' opacity-100 visible' : ' opacity-0 invisible') +
+            (searchValue !== '' ? ' bg-opacity-50':' bg-opacity-90')
           }
         >
           <div
