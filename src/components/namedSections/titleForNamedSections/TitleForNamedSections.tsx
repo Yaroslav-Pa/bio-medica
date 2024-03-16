@@ -8,7 +8,7 @@ function TitleForNamedSections({
   return (
     <h1
       className={
-        'pl-3 text-xl p-2 font-bold ' +
+        'pl-3 text-xl p-2 font-bold whitespace-pre-line ' +
         (isRounded
           ? ' radial-gradient text-white rounded-lg'
           : ' border-b-2 border-firstColor')
