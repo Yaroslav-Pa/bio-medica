@@ -27,9 +27,9 @@ function NavSectionForAllService({
       >
         <h2>Пошук аналізів</h2>
         <input
-          className='border-2 rounded-lg px-3 py-1 border-cardSecondColor 3xl:border-stone-300'
-          type='text'
-          name='searchField'
+          className="border-2 rounded-lg px-3 py-1 border-cardSecondColor 3xl:border-stone-300"
+          type="text"
+          name="searchField"
           value={searchValue}
           onChange={(e) => {
             setSearch(e.target.value);
@@ -44,22 +44,24 @@ function NavSectionForAllService({
             : ' opacity-100 visible')
         }
       >
-        <h2 className='border-b-2 border-b-cardSecondColor 3xl:border-b-stone-300'>
+        <h2 className="border-b-2 border-b-cardSecondColor 3xl:border-b-stone-300">
           Доступні аналізів по розділам
         </h2>
         {array && (
-          <div className='flex flex-col gap-3'>
+          <div className="flex flex-col gap-3">
             {array.length > 0 &&
-              array.map((text) => (
-                <Link
-                  href={`#${text}`}
-                  scroll={true}
-                  key={text}
-                  className="relative text-xl w-fit block after:block after:content-[''] after:absolute after:left-0 after:h-[2px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left transition-all duration-300 px-5 pl-0 hover:pl-3 3xl:hover:pl-1 3xl:max-w-[250px] 4xl:max-w-[400px] 5xl:max-w-[520px]"
-                >
-                  {text}
-                </Link>
-              ))}
+              array.map((text) =>
+                text.split('\n').map((title) => (
+                  <Link
+                    href={`#${text}`}
+                    scroll={true}
+                    key={title}
+                    className="relative text-xl w-fit block after:block after:content-[''] after:absolute after:left-0 after:h-[2px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left transition-all duration-300 px-5 pl-0 hover:pl-3 3xl:hover:pl-1 3xl:max-w-[250px] 4xl:max-w-[400px] 5xl:max-w-[520px]"
+                  >
+                    {title}
+                  </Link>
+                ))
+              )}
             {array.length <= 0 && <div>Звантаження розділів...</div>}
           </div>
         )}
@@ -77,7 +79,7 @@ function NavSectionForAllService({
       >
         {searchAndSectionNameListing}
       </section>
-      <section className='3xl:hidden'>
+      <section className="3xl:hidden">
         <div
           className={
             'fixed top-24 h-fit max-w-[25px] sm:max-w-[40px] bg-transparent rounded-r-md [writing-mode:vertical-rl] py-2 sm:px-2 text-center border-l-0 border-2 border-cardSecondColor hover:cursor-pointer font-semibold z-0 transition-opacity duration-200' +
@@ -96,7 +98,7 @@ function NavSectionForAllService({
           }
         >
           <div
-            className='fixed top-3 left-5 text-[24px] md:text-[28px] hover:cursor-pointer'
+            className="fixed top-3 left-5 text-[24px] md:text-[28px] hover:cursor-pointer"
             onClick={() => {
               setIsOpen(false);
             }}
