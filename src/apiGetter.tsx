@@ -1,11 +1,11 @@
 import axios from 'axios';
-import { Section } from './app/AllServices/page';
+import { CardSectionType } from './components/namedSections/namedSectionCards/NamedSectionCards';
 import { CardType } from './components/card/Card';
 
 export const getFromApi = (
   url: string,
   setter: Function,
-  mapper?: (data: TransformSectionsPayload) => Section[]
+  mapper?: (data: TransformSectionsPayload) => CardSectionType[]
 ) => {
   axios
     .get(url)
@@ -17,7 +17,7 @@ export const getFromApi = (
     });
 };
 
-type SectionPayload = Section & { services: string };
+type SectionPayload = CardSectionType & { services: string };
 
 type TransformSectionsPayload = {
   Sections: SectionPayload[];
