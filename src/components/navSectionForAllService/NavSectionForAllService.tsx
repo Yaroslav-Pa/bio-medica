@@ -48,7 +48,7 @@ function NavSectionForAllService({
           Доступні аналізів по розділам
         </h2>
         {array && (
-          <div className='flex flex-col gap-3'>
+          <div className='flex flex-col gap-3 overflow-auto overflow-y-scroll max-h-[78vh]'>
             {array.length > 0 &&
               array.map((text) => (
                 <Link
