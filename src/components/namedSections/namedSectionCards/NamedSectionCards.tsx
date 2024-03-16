@@ -19,7 +19,7 @@ function NamedSectionCards({
 }) {
   const normalComponentListing = arr.map(({ title, services, _uid }) => {
     return (
-      <div className='gap-10 flex flex-col' key={`${_uid}+${title}`} id={title}>
+      <div className='gap-10 flex flex-col' key={`${_uid}+${title}`} id={title.replace(/\s/g, '')}>
         <TitleForNamedSections isRounded={isRounded} title={title} />
         
         <SectionForCards cardsArr={services} />
