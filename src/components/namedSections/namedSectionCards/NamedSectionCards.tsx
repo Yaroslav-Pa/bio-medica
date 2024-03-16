@@ -1,6 +1,6 @@
 import SectionForCards from '../../sectionForCards/SectionForCards';
 import TitleForNamedSections from '../titleForNamedSections/TitleForNamedSections';
-import '../layout/header/styles.css';
+import './../style.css';
 import { cardHolder } from '@/variablesToChange';
 import { CardType } from '../../card/Card';
 

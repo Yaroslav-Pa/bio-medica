@@ -1,4 +1,4 @@
-import '../layout/header/styles.css';
+import './../style.css';
 import ExtendedComponent from '@/components/extendedComponent/ExtendedComponent';
 import { QuestionProps } from '@/components/extendedComponent/ExtendedComponent';
 import TitleForNamedSections from '../titleForNamedSections/TitleForNamedSections';
