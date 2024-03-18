@@ -10,6 +10,8 @@ import Card from '@/components/card/Card';
 import { Change, cardHolder } from '@/variablesToChange';
 import NamedSectionCards from '@/components/namedSections/namedSectionCards/NamedSectionCards';
 import { CardSectionType } from '@/components/namedSections/namedSectionCards/NamedSectionCards';
+import SearchInput from '@/components/searchInput/SearchInput';
+
 const { AllServicesApi: storyBlockApi } = Change;
 
 function AllServices() {
@@ -79,19 +81,11 @@ function AllServices() {
 
       <div className='mx-auto flex flex-col max-w-[1400px]'>
         <section className='m-[10%] md:m-20'>
-          <div className='mb-5 mx-auto sm:mx-0 w-fit'>
+          <div className='mb-5 flex flex-col sm:flex-row sm:gap-3 justify-center sm:justify-start items-center'>
             <h2>Пошук аналізів</h2>
-            <input
-              className='border-2 rounded-lg px-3 py-1 border-cardSecondColor 3xl:border-stone-300'
-              type='text'
-              name='searchField'
-              value={search}
-              onChange={(e) => {
-                setSearch(e.target.value);
-              }}
-            />
+            <SearchInput search={search} setSearch={setSearch} />
           </div>
-          <section className='flex flex-col gap-y-32'>
+          <section className='flex flex-col gap-y-14 sm:gap-y-32'>
             {search === '' && servicesArr.length > 0 && (
               <NamedSectionCards arr={servicesArr} isRounded={true} />
             )}
