@@ -18,7 +18,7 @@ function NavSectionForAllService({
         className={
           'flex flex-col gap-2 transition-opacity duration-500 px-6 md:px-0 ' +
           (!isOpen
-            ? ' opacity-0 invisible 3xl:opacity-100 xl:visible'
+            ? ' opacity-0 invisible 3xl:opacity-100 3xl:visible'
             : ' opacity-100 visible')
         }
       >
