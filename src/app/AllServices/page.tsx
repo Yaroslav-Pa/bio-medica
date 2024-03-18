@@ -12,8 +12,6 @@ import NamedSectionCards from '@/components/namedSections/namedSectionCards/Name
 import { CardSectionType } from '@/components/namedSections/namedSectionCards/NamedSectionCards';
 const { AllServicesApi: storyBlockApi } = Change;
 
-
-
 function AllServices() {
   const [servicesArr, setServicesArr] = useState<CardSectionType[]>([]);
   const [serchedServices, setSerchedServices] = useState<CardType[]>([]);
@@ -79,7 +77,9 @@ function AllServices() {
             <NamedSectionCards arr={servicesArr} isRounded={true} />
           )}
           {search !== '' && servicesArr.length > 0 && (
-            <SectionForCards cardsArr={serchedServices} />
+            <div className={search ? 'mt-16 md:mt-2' : ''}>
+              <SectionForCards cardsArr={serchedServices} />
+            </div>
           )}
           {search === '' && servicesArr.length <= 0 && (
             <Card card={cardHolder} />

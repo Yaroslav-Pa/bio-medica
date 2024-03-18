@@ -96,15 +96,16 @@ function NavSectionForAllService({
         </div>
         <div
           className={
-            'fixed top-0 bottom-0 w-screen md:left-0 md:w-fit bg-white md:bg-opacity-100 z-10 transition-all duration-500 flex flex-col justify-start items-center gap-6 pt-10 sm:pl-14 ssm:px-10 ssm:py-10 md:max-w-[700px]' +
+            'fixed md:left-0 md:w-fit bg-white z-10 transition-all duration-500 flex flex-col justify-start items-center gap-6 pt-10 ssm:px-7 ssm:py-7 md:py-10' +
             (isOpen ? ' opacity-100 visible' : ' opacity-0 invisible') +
-            (searchValue !== '' ? ' bg-opacity-50' : ' bg-opacity-90')
+            (searchValue !== '' ? ' bg-opacity-70 top-0 bottom-[85%] w-screen md:max-w-[400px]' : ' bg-opacity-95 top-0 bottom-0 w-screen md:max-w-[400px] lg:max-w-[30vw]')
           }
         >
           <div
-            className='fixed top-3 left-5 text-[24px] md:text-[28px] hover:cursor-pointer'
+            className={'fixed top-3 left-5 hover:cursor-pointer transition-all duration-300 '+(searchValue !== '' ? ' text-red-600 text-[30px] md:text-[34px] ' : ' text-black text-[24px] md:text-[28px] ')}
             onClick={() => {
               setIsOpen(false);
+              setSearch('');
             }}
           >
             <FontAwesomeIcon icon={faXmark} />
