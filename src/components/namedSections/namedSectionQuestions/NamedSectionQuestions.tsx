@@ -31,7 +31,6 @@ function NamedSectionQuestions({
               />
             );
           })}
-          tT
         </div>
       </div>
     );

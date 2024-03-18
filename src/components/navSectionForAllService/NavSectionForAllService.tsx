@@ -4,51 +4,29 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 
 function NavSectionForAllService({
-  searchValue,
-  setSearch,
   array,
   currentScroll,
 }: {
-  searchValue: string;
-  setSearch: Function;
   array?: string[];
   currentScroll?: number;
 }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const searchAndSectionNameListing = (
-    <>
-      <div
-        className={
-          !isOpen
-            ? ' opacity-0 invisible 3xl:opacity-100 3xl:visible'
-            : ' opacity-100 visible'
-        }
-      >
-        <h2>Пошук аналізів</h2>
-        <input
-          className='border-2 rounded-lg px-3 py-1 border-cardSecondColor 3xl:border-stone-300'
-          type='text'
-          name='searchField'
-          value={searchValue}
-          onChange={(e) => {
-            setSearch(e.target.value);
-          }}
-        />
-      </div>
+    <section className='mt-5'>
       <div
         className={
           'flex flex-col gap-2 transition-opacity duration-500 px-6 md:px-0 ' +
-          (searchValue != '' || !isOpen
-            ? ' opacity-0 invisible 3xl:opacity-100 3xl:visible'
+          (!isOpen
+            ? ' opacity-0 invisible 3xl:opacity-100 xl:visible'
             : ' opacity-100 visible')
         }
       >
         <h2 className='border-b-2 border-b-cardSecondColor 3xl:border-b-stone-300'>
-          Доступні аналізів по розділам
+          Доступні аналізи за розділами
         </h2>
         {array && (
-          <div className='flex flex-col gap-3 overflow-auto overflow-y-scroll max-h-[70vh] 3xl:max-h-[58vh]'>
+          <div className='flex flex-col gap-3 overflow-auto overflow-y-scroll max-h-[85vh] 3xl:max-h-[58vh]'>
             {array.length > 0 &&
               array.map((text) =>
                 text.split('\n').map((title) => {
@@ -69,7 +47,7 @@ function NavSectionForAllService({
           </div>
         )}
       </div>
-    </>
+    </section>
   );
 
   return (
@@ -92,20 +70,20 @@ function NavSectionForAllService({
             isOpen ? setIsOpen(false) : setIsOpen(true);
           }}
         >
-          Пошук та секції
+          Вибір розділу
         </div>
         <div
           className={
-            'fixed md:left-0 md:w-fit bg-white z-10 transition-all duration-500 flex flex-col justify-start items-center gap-6 pt-10 ssm:px-7 ssm:py-7 md:py-10' +
-            (isOpen ? ' opacity-100 visible' : ' opacity-0 invisible') +
-            (searchValue !== '' ? ' bg-opacity-70 top-0 bottom-[85%] w-screen md:max-w-[400px]' : ' bg-opacity-95 top-0 bottom-0 w-screen md:max-w-[400px] lg:max-w-[30vw]')
+            'fixed md:left-0 md:w-fit bg-white z-10 transition-all duration-500 flex flex-col justify-start items-center gap-6 pt-10 px-3 ssm:px-7 ssm:py-5 md:py-7 bg-opacity-80 top-0 bottom-0 w-screen md:max-w-[400px] lg:max-w-[30vw]' +
+            (isOpen ? ' opacity-100 visible' : ' opacity-0 invisible')
           }
         >
           <div
-            className={'fixed top-3 left-5 hover:cursor-pointer transition-all duration-300 '+(searchValue !== '' ? ' text-red-600 text-[30px] md:text-[34px] ' : ' text-black text-[24px] md:text-[28px] ')}
+            className={
+              'fixed top-3 left-5 hover:cursor-pointer transition-all duration-300 text-[24px] md:text-[28px] '
+            }
             onClick={() => {
               setIsOpen(false);
-              setSearch('');
             }}
           >
             <FontAwesomeIcon icon={faXmark} />

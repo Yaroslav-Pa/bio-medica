@@ -5,7 +5,7 @@ function SectionForCards({ cardsArr }: { cardsArr?: CardType[] }) {
     <section
       className={'flex flex-col gap-5 justify-stretch items-stretch w-full'}
     >
-      {cardsArr && cardsArr.length >= 0 ? (
+      {cardsArr && cardsArr.length > 0 ? (
         cardsArr.map((card) => {
           return <Card card={card} key={card._uid} />;
         })

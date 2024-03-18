@@ -65,25 +65,43 @@ function AllServices() {
           currentHeight > 500 ? ' opacity-100 visible' : ' opacity-0 invisible'
         }
       />
-      <NavSectionForAllService
-        searchValue={search}
-        setSearch={setSearch}
-        array={sectionsNameArray}
-        currentScroll={currentHeight}
-      />
+      <div
+        className={
+          'transition-opacity duration-300 ' +
+          (search !== '' ? ' opacity-0 invisible ' : ' opacity-100 visible')
+        }
+      >
+        <NavSectionForAllService
+          array={sectionsNameArray}
+          currentScroll={currentHeight}
+        />
+      </div>
+
       <div className='mx-auto flex flex-col max-w-[1400px]'>
-        <section className='m-[10%] md:m-20 flex flex-col gap-y-32'>
-          {search === '' && servicesArr.length > 0 && (
-            <NamedSectionCards arr={servicesArr} isRounded={true} />
-          )}
-          {search !== '' && servicesArr.length > 0 && (
-            <div className={search ? 'mt-16 md:mt-2' : ''}>
+        <section className='m-[10%] md:m-20'>
+          <div className='mb-5 mx-auto sm:mx-0 w-fit'>
+            <h2>Пошук аналізів</h2>
+            <input
+              className='border-2 rounded-lg px-3 py-1 border-cardSecondColor 3xl:border-stone-300'
+              type='text'
+              name='searchField'
+              value={search}
+              onChange={(e) => {
+                setSearch(e.target.value);
+              }}
+            />
+          </div>
+          <section className='flex flex-col gap-y-32'>
+            {search === '' && servicesArr.length > 0 && (
+              <NamedSectionCards arr={servicesArr} isRounded={true} />
+            )}
+            {search !== '' && servicesArr.length > 0 && (
               <SectionForCards cardsArr={serchedServices} />
-            </div>
-          )}
-          {search === '' && servicesArr.length <= 0 && (
-            <Card card={cardHolder} />
-          )}
+            )}
+            {search === '' && servicesArr.length <= 0 && (
+              <Card card={cardHolder} />
+            )}
+          </section>
         </section>
       </div>
     </div>
