@@ -74,7 +74,7 @@ function NavSectionForAllService({
         </div>
         <div
           className={
-            'fixed md:left-0 md:w-fit bg-white z-10 transition-all duration-500 flex flex-col justify-start items-center gap-6 pt-10 px-3 ssm:px-7 ssm:py-5 md:py-7 bg-opacity-80 top-0 bottom-0 w-screen md:max-w-[400px] lg:max-w-[30vw]' +
+            'fixed md:left-0 md:w-fit bg-white z-10 transition-all duration-500 flex flex-col justify-start items-center gap-6 pt-10 px-3 ssm:px-7 ssm:py-5 md:py-7 bg-opacity-80 md:bg-opacity-90 top-0 bottom-0 w-screen md:max-w-[400px] lg:max-w-[30vw]' +
             (isOpen ? ' opacity-100 visible' : ' opacity-0 invisible')
           }
         >
