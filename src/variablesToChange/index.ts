@@ -1,9 +1,12 @@
+'use client';
+import axios from 'axios';
 import { CardType } from '@/components/card/Card';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import {
   faFacebook,
   faInstagram,
   faTelegram,
+  faXTwitter,
 } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { LatLngTuple } from 'leaflet';
@@ -35,6 +38,8 @@ export type Social = {
 export type page = { url: string; pageName: string };
 
 type MyData = {
+  OtherApi: string;
+  MapApi: string;
   FAQApi: string;
   AllServicesApi: string;
   ImageSliderApi: string;
@@ -56,6 +61,10 @@ export const cardHolder = {
 };
 
 export const Change: MyData = {
+  OtherApi:
+    'https://api.storyblok.com/v2/cdn/stories/other?cv=1710940971&token=FYShrSsmafxPX5CaF9YMKAtt&version=published',
+  MapApi:
+    'https://api.storyblok.com/v2/cdn/stories/map?cv=1710940705&token=FYShrSsmafxPX5CaF9YMKAtt&version=published',
   FAQApi:
     'https://api.storyblok.com/v2/cdn/stories/faq?cv=1710496295&token=FYShrSsmafxPX5CaF9YMKAtt&version=published',
   AllServicesApi:
@@ -109,7 +118,7 @@ export const Change: MyData = {
     { name: 'facebook', url: 'https://facebook.com', icon: faFacebook },
     { name: 'instagram', url: 'https://instagram.com', icon: faInstagram },
     { name: 'telegram', url: 'https://telegram.com', icon: faTelegram },
-    { name: 'email', url: 'https://email.com', icon: faEnvelope },
+    { name: 'twitter', url: 'https://instagram.com/', icon: faXTwitter },
   ],
   map: {
     'м. Запоріжжя': [
@@ -128,7 +137,7 @@ export const Change: MyData = {
         phone: '+38 (066) 960-58-60',
         schedule: {
           weekdays: 'пн-пт: 8:00-13:00',
-          saturday: 'сб: 8:00-12:00',
+          saturday: 'пн-пт: 8:00-13:00',
         },
       },
       {
