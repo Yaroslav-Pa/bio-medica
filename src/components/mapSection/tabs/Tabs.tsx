@@ -28,7 +28,7 @@ export const Tabs = ({
               }`}
               onClick={() => onTabClick(location)}
             >
-              {location.address}
+              {location.address.replace('\\n', ' ')}
             </div>
           ))}
         </div>
