@@ -1,11 +1,11 @@
 'use client';
-import { getFromApi, transformSections } from '@/apiGetter';
+import { getFromApi } from '@/apiGetter';
 import ExtendedComponent from '@/components/extendedComponent/ExtendedComponent';
 import { useEffect, useState } from 'react';
-import { Change } from '@/variablesToChange';
+import { CONSTANTS } from '@/constants';
 import NamedSectionQuestions from '@/components/namedSections/namedSectionQuestions/NamedSectionQuestions';
 import { QuestionSectionType } from '@/components/namedSections/namedSectionQuestions/NamedSectionQuestions';
-const { FAQApi: storyBlockApi } = Change;
+const { FAQApi: storyBlockApi } = CONSTANTS;
 
 function Faqs() {
   const [sections, setSections] = useState<{
@@ -17,8 +17,8 @@ function Faqs() {
   }, []);
 
   return (
-    <div className='mx-auto flex flex-col max-w-[1200px]'>
-      <section className='m-[10%] md:m-20 flex flex-col gap-20'>
+    <div className="mx-auto flex flex-col max-w-[1200px]">
+      <section className="m-[10%] md:m-20 flex flex-col gap-20">
         {sections.Sections?.length <= 0 && (
           <ExtendedComponent
             question={'Завантаження...'}

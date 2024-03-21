@@ -1,12 +1,11 @@
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import './globals.css';
-import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
-config.autoAddCss = false;
-
-import Layout from '@/components/layout/Layout';
+import './globals.css';
+import type { Metadata } from 'next';
 import { Suspense } from 'react';
+import { Inter } from 'next/font/google';
+import { config } from '@fortawesome/fontawesome-svg-core';
+import Layout from '@/components/layout/Layout';
+config.autoAddCss = false;
 
 const inter = Inter({ subsets: ['cyrillic'] });
 
@@ -22,7 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Layout>
-          <Suspense fallback={<div>Завантаження...</div>}>{children}</Suspense>
+          <Suspense fallback={<div>Завантаження...</div>}>{children} </Suspense>
         </Layout>
       </body>
     </html>

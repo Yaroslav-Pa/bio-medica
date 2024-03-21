@@ -7,12 +7,12 @@ import NavSectionForAllService from '@/components/navSectionForAllService/NavSec
 import ToTopButton from '@/components/toTopButton/ToTopButton';
 import SectionForCards from '@/components/sectionForCards/SectionForCards';
 import Card from '@/components/card/Card';
-import { Change, cardHolder } from '@/variablesToChange';
+import { CONSTANTS, cardHolder } from '@/constants';
 import NamedSectionCards from '@/components/namedSections/namedSectionCards/NamedSectionCards';
 import { CardSectionType } from '@/components/namedSections/namedSectionCards/NamedSectionCards';
 import SearchInput from '@/components/searchInput/SearchInput';
 
-const { AllServicesApi: storyBlockApi } = Change;
+const { AllServicesApi: storyBlockApi } = CONSTANTS;
 
 function AllServices() {
   const [servicesArr, setServicesArr] = useState<CardSectionType[]>([]);
@@ -79,13 +79,13 @@ function AllServices() {
         />
       </div>
 
-      <div className='mx-auto flex flex-col max-w-[1400px]'>
-        <section className='m-[10%] md:m-20'>
-          <div className='mb-5 flex flex-col sm:flex-row sm:gap-3 justify-center sm:justify-start items-center'>
+      <div className="mx-auto flex flex-col max-w-[1400px]">
+        <section className="m-[10%] md:m-20">
+          <div className="mb-5 flex flex-col sm:flex-row sm:gap-3 justify-center sm:justify-start items-center">
             <h2>Пошук аналізів</h2>
             <SearchInput search={search} setSearch={setSearch} />
           </div>
-          <section className='flex flex-col gap-y-14 sm:gap-y-32'>
+          <section className="flex flex-col gap-y-14 sm:gap-y-32">
             {search === '' && servicesArr.length > 0 && (
               <NamedSectionCards arr={servicesArr} isRounded={true} />
             )}

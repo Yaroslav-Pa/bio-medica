@@ -7,9 +7,9 @@ import Card from '../card/Card';
 import { Button } from '../button/Button';
 import { getFromApi } from '../../apiGetter';
 import SectionForCards from '../sectionForCards/SectionForCards';
-import { Change, cardHolder } from '@/variablesToChange';
+import { CONSTANTS, cardHolder } from '@/constants';
 
-const { TopServicesApi: storyBlockApi } = Change;
+const { TopServicesApi: storyBlockApi } = CONSTANTS;
 
 function TopServices() {
   const [cards, setCards] = useState({ AllSevices: [] });

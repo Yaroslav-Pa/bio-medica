@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { MapLocation } from '@/variablesToChange';
+import { MapLocation } from '@/constants';
 
 function renderAddress(address: string) {
   return address.split('\n').map((line, index) => (
