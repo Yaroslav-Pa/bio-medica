@@ -3,7 +3,7 @@ import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import { Icon } from 'leaflet';
 import { ChangeView } from './ChangeView';
-import { MapLocation } from '../../../variablesToChange';
+import { CONSTANTS, MapLocation } from '../../../constants';
 
 const customIcon = new Icon({
   iconUrl: '/map-marker.webp',
@@ -16,8 +16,12 @@ export default function Map({
   markers,
 }: {
   selectedLocation: MapLocation;
-  markers: MapLocation[];
+  markers: Record<string, MapLocation[]>;
 }) {
+  const mapMarkers: MapLocation[] = Object.values(
+    Object.values(markers).length > 0 ? markers : CONSTANTS.map
+  ).reduce((acc, value) => [...acc, ...value], []);
+
   return (
     <MapContainer
       center={selectedLocation.coordinates}
@@ -30,7 +34,7 @@ export default function Map({
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       <ChangeView center={selectedLocation.coordinates} />
-      {markers.map((marker) => (
+      {mapMarkers.map((marker) => (
         <Marker
           position={marker.coordinates}
           icon={customIcon}

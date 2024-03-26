@@ -1,8 +1,8 @@
 import SocialsIsonsList from '@/components/socialsIcons/SocialsiconsList';
 import PagesListing from '@/components/pagesListing/PagesListing';
 import PhoneList from '@/components/phonesList/PhoneList';
-import { Change } from '@/variablesToChange/index';
-const { phones } = Change;
+import { useContext } from 'react';
+import { SocialsContext } from '../Layout';
 
 function SimpleNavContacts({
   moreStyling = '',
@@ -11,8 +11,10 @@ function SimpleNavContacts({
 }: {
   moreStyling?: string;
   children?: any;
-  onClick?:Function
+  onClick?: Function;
 }) {
+  const socials = useContext(SocialsContext);
+
   return (
     <section
       className={
@@ -20,15 +22,15 @@ function SimpleNavContacts({
         moreStyling
       }
     >
-      <div className='flex flex-col items-center gap-2'>
-        <PagesListing isSimple={true} onClick={onClick}/>
+      <div className="flex flex-col items-center gap-2">
+        <PagesListing isSimple={true} onClick={onClick} />
       </div>
-      <div className='flex flex-col gap-5 items-center'>
-        <div className='flex flex-row gap-4 text-large flex-wrap'>
-          <SocialsIsonsList />
+      <div className="flex flex-col gap-5 items-center">
+        <div className="flex flex-row gap-4 text-large flex-wrap">
+          <SocialsIsonsList socials={socials.socials} />
         </div>
-        <div className='flex flex-col gap-2 font-bold  items-center text-small  md:text-base h-[100%]'>
-          <PhoneList phones={phones} />
+        <div className="flex flex-col gap-2 font-bold  items-center text-small  md:text-base h-[100%]">
+          <PhoneList phones={socials.phones} />
         </div>
         {children}
       </div>

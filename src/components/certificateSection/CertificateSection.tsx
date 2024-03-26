@@ -1,12 +1,11 @@
 'use client';
 import React from 'react';
 import Certificate from './Certificate';
-import { Button } from '../button/Button';
 import { useEffect, useState } from 'react';
 import { getFromApi } from '../../apiGetter';
 import ToggleButton from '../button/ToggleButton';
-import { Change } from '@/variablesToChange';
-const {CertificateApi:storyBlockApi} = Change;
+import { CONSTANTS } from '@/constants';
+const { CertificateApi: storyBlockApi } = CONSTANTS;
 
 function CertificateSection() {
   const [cards, setCards] = useState({ Certificates: [] });
@@ -17,19 +16,19 @@ function CertificateSection() {
   }, []);
 
   return (
-    <section className=' bg-firstColor my-10'>
-      <div className='max-w-containerWidth mx-auto flex flex-col gap-4 px-3 py-10'>
-        <div className='flex flex-col items-start gap-2'>
-          <h1 className='text-xl font-bold'>Ліцензії та сертифікати</h1>
+    <section className=" bg-firstColor my-10">
+      <div className="max-w-containerWidth mx-auto flex flex-col gap-4 px-3 py-10">
+        <div className="flex flex-col items-start gap-2">
+          <h1 className="text-xl font-bold">Ліцензії та сертифікати</h1>
           <ToggleButton isChecked={isShowAll} onToggle={setIsShowAll}>
             Дивитись всі
           </ToggleButton>
         </div>
         {cards.Certificates.length <= 0 && (
-          <div className='text-center w-full'>Завантаження сертифікатів...</div>
+          <div className="text-center w-full">Завантаження сертифікатів...</div>
         )}
         {cards.Certificates.length > 0 && (
-          <article className='grid grid-cols-2 md:grid-cols-4 gap-5 justify-center items-center'>
+          <article className="grid grid-cols-2 md:grid-cols-4 gap-5 justify-center items-center">
             {(isShowAll
               ? cards.Certificates
               : cards.Certificates.slice(0, 4)

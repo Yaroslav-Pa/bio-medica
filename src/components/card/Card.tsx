@@ -4,7 +4,7 @@ export type CardType = {
   Days: string;
   Price: string;
 };
-import { cardHolder } from '@/variablesToChange';
+import { cardHolder } from '@/constants';
 
 function Card({ card }: { card: CardType }) {
   const { Name, Days, Price } = card;

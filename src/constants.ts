@@ -1,14 +1,13 @@
-import axios from 'axios';
+'use client';
 import { CardType } from '@/components/card/Card';
-import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import {
   faFacebook,
   faInstagram,
   faTelegram,
   faXTwitter,
 } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { LatLngTuple } from 'leaflet';
+import { Social } from './components/layout/Layout';
 
 type ImageForSlider = {
   id: number;
@@ -26,12 +25,6 @@ export type MapLocation = {
     weekdays: string;
     saturday?: string;
   };
-};
-
-export type Social = {
-  name: string;
-  url: string;
-  icon: IconDefinition;
 };
 
 export type page = { url: string; pageName: string };
@@ -59,7 +52,7 @@ export const cardHolder = {
   _uid: 'Завантаження...',
 };
 
-export const Change: MyData = {
+export const CONSTANTS: MyData = {
   OtherApi:
     'https://api.storyblok.com/v2/cdn/stories/other?cv=1710940971&token=FYShrSsmafxPX5CaF9YMKAtt&version=published',
   MapApi:

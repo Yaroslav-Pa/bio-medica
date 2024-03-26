@@ -1,7 +1,7 @@
 import SectionForCards from '../sectionForCards/SectionForCards';
 import '../layout/header/styles.css';
 import ExtendedComponent from '@/components/extendedComponent/ExtendedComponent';
-import { cardHolder } from '@/variablesToChange';
+import { cardHolder } from '@/constants';
 import { CardSectionType } from '../namedSections/namedSectionCards/NamedSectionCards';
 import { QuestionProps } from '@/components/extendedComponent/ExtendedComponent';
 
