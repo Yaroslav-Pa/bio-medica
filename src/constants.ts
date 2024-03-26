@@ -1,4 +1,3 @@
-'use client';
 import { CardType } from '@/components/card/Card';
 import {
   faFacebook,
