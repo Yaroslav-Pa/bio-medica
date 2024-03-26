@@ -1,4 +1,3 @@
-'use client';
 import axios from 'axios';
 import { CardType } from '@/components/card/Card';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
