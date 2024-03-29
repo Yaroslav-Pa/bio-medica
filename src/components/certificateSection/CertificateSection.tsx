@@ -19,7 +19,7 @@ function CertificateSection() {
     <section className=" bg-firstColor my-10">
       <div className="max-w-containerWidth mx-auto flex flex-col gap-4 px-3 py-10">
         <div className="flex flex-col items-start gap-2">
-          <h1 className="text-xl font-bold">Ліцензії та сертифікати</h1>
+          <h1 className="text-xl font-bold">Ліцензії, сертифікати та обладнання</h1>
           <ToggleButton isChecked={isShowAll} onToggle={setIsShowAll}>
             Дивитись всі
           </ToggleButton>
