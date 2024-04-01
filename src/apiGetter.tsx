@@ -127,8 +127,8 @@ export const transformSocials = (
   const socials: Social[] = [
     { name: 'facebook', url: facebookUrl.url, icon: faFacebook },
     { name: 'instagram', url: instagramUrl.url, icon: faInstagram },
-    { name: 'telegram', url: telegramUrl.url, icon: faTelegram },
-    { name: 'twitter', url: twitterUrl.url, icon: faXTwitter },
+    // { name: 'telegram', url: telegramUrl.url, icon: faTelegram },
+    // { name: 'twitter', url: twitterUrl.url, icon: faXTwitter },
   ];
 
   return { mail, phones, socials };

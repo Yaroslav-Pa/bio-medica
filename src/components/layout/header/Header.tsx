@@ -12,7 +12,6 @@ import { SocialsContext } from '../Layout';
 function Header() {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
   const toggleMenu = () => {
-    console.log(isOpenMenu);
     isOpenMenu ? setIsOpenMenu(false) : setIsOpenMenu(true);
   };
   const socials = useContext(SocialsContext);
@@ -35,9 +34,12 @@ function Header() {
         </div>
       </div>
       <div className='hidden mdp:flex gap-5 pr-4 lg:pr-8 text-buttonDarktColor items-center'>
-        <Button href='http://results.bio-medica.com.ua/' isBlack={false}>
-          Отримати результати
-        </Button>
+        <div className='order-0 md:order-1'>
+          <Button href='http://results.bio-medica.com.ua/' isBlack={false}>
+            Отримати результати
+          </Button>
+        </div>
+
         <div className='hidden xl:grid grid-cols-2 gap-2 text-large flex-wrap'>
           <SocialsIsonsList socials={socials.socials} />
         </div>

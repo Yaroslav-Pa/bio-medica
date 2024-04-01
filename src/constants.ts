@@ -110,8 +110,6 @@ export const CONSTANTS: MyData = {
   socials: [
     { name: 'facebook', url: 'https://facebook.com', icon: faFacebook },
     { name: 'instagram', url: 'https://instagram.com', icon: faInstagram },
-    { name: 'telegram', url: 'https://telegram.com', icon: faTelegram },
-    { name: 'twitter', url: 'https://instagram.com/', icon: faXTwitter },
   ],
   map: {
     'м. Запоріжжя': [

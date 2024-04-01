@@ -48,7 +48,7 @@ function AboutUsPage() {
           <h2 className='font-bold text-center lg:text-left'>
             Слідкуйте за нами у соц. мережах:
           </h2>
-          <div className='flex flex-row gap-2 justify-evenly'>
+          <div className='flex flex-row gap-2 justify-center'>
             {socials.map(({ url, icon, name }) => (
               <Link
                 href={url}
